@@ -1,0 +1,168 @@
+/*
+Theme Name: Visit Camotes Interactive Theme
+Theme URI: -
+Author: Carlou Benedict Luchavez
+Github Url: https://github.com/bnzxs
+Description: A custom theme showcasing the beauty of the Camotes Island
+Version: 1.0.0
+*/
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+li.menu-item {
+  list-style: none;
+}
+
+.menu-btn > a {
+  background-color: #ee6c2b;
+
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ee6c2b;
+  transition: all 0.2s ease;
+}
+
+.menu-btn > a:hover {
+  background-color: var(--primary-color);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('assets/fonts/noto-sans-latin-wght-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('assets/fonts/MaterialSymbolsOutlined.ttf') format('truetype');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contact-item:last-child .separator {
+  display: map;
+}
+
+/* Editorial Blog Styles */
+.editorial-shadow {
+  box-shadow: 0 4px 20px -2px rgb(0 0 0 / 20%);
+}
+
+.hover-card:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+#blog-content .wp-block-image {
+  margin: auto 0;
+}
+
+#blog-content .wp-block-image img {
+  border-radius: 15px;
+}
+
+@media print {
+  /* Hide non-essential elements */
+  nav.sticky,
+  aside,
+  button,
+  .footer,
+  #guide-nav,
+  .scroll-mt-28 {
+    scroll-margin-top: 0 !important;
+  }
+
+  /* Expand main content */
+  main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Reset background colors for consistency */
+  body {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure backgrounds render */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide the download button specifically if generalized button hiding misses it */
+  button[onclick="window.print()"] {
+    display: none !important;
+  }
+
+  /* Hide shadows to make it look cleaner on paper */
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
