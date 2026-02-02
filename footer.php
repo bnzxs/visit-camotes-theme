@@ -286,18 +286,91 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data.success) {
           aiLoading.classList.add('hidden');
           const answer = data.data.answer;
-          let i = 0;
-          const speed = 8;
           
-          function typeWriter() {
-            if (i < answer.length) {
-              const char = answer.charAt(i);
-              aiResponseText.innerHTML += char === '\n' ? '<br>' : char;
-              i++;
-              setTimeout(typeWriter, speed);
-            }
+          function parseMarkdown(text) {
+            // Escape HTML characters to prevent XSS (basic)
+            let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+            // Bold: **text**
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // Italic: *text*
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // Bullet points: * Text (at start of string or newline)
+            // We'll replace them with a bullet character and a line break for simplicity
+            html = html.replace(/(?:^|\n)\* (.*)/g, '<br>• $1');
+            
+            // Convert newlines to <br>
+            html = html.replace(/\n/g, '<br>');
+            
+            return html;
           }
-          typeWriter();
+
+          // Typing animation effect
+          const formattedAnswer = parseMarkdown(answer);
+          aiResponseText.innerHTML = '';
+          
+          // Create a temporary element to parse the HTML
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = formattedAnswer;
+          
+          // Function to type out HTML content with formatting
+          function typeHTML(element, targetElement, speed = 30) {
+            let currentIndex = 0;
+            const nodes = Array.from(element.childNodes);
+            
+            function typeNode(node, parent) {
+              if (node.nodeType === Node.TEXT_NODE) {
+                // Text node - type character by character
+                const text = node.textContent;
+                let charIndex = 0;
+                
+                return new Promise((resolve) => {
+                  const textNode = document.createTextNode('');
+                  parent.appendChild(textNode);
+                  
+                  function typeChar() {
+                    if (charIndex < text.length) {
+                      textNode.textContent += text[charIndex];
+                      charIndex++;
+                      setTimeout(typeChar, speed);
+                    } else {
+                      resolve();
+                    }
+                  }
+                  typeChar();
+                });
+              } else if (node.nodeType === Node.ELEMENT_NODE) {
+                // Element node - create the element and type its contents
+                const newElement = document.createElement(node.tagName);
+                
+                // Copy attributes
+                Array.from(node.attributes).forEach(attr => {
+                  newElement.setAttribute(attr.name, attr.value);
+                });
+                
+                parent.appendChild(newElement);
+                
+                // Type children sequentially
+                return (async () => {
+                  for (const child of Array.from(node.childNodes)) {
+                    await typeNode(child, newElement);
+                  }
+                })();
+              }
+              return Promise.resolve();
+            }
+            
+            // Type all nodes sequentially
+            (async () => {
+              for (const node of nodes) {
+                await typeNode(node, targetElement);
+              }
+            })();
+          }
+          
+          typeHTML(tempDiv, aiResponseText);
         } else {
           aiResponseText.innerHTML = `<p class="text-red-500">Error: ${data.data}</p>`;
           aiLoading.classList.add('hidden');

@@ -18,6 +18,11 @@
   </title>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/noto-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Google Fonts for Material Symbols (For local site) -->
+  <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/MaterialSymbolsOutlined.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- Google Fonts for Material Symbols (Fix for live site) 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />-->
+
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
@@ -30,6 +35,7 @@
             "background-dark": "#221610",
             "text-main": "#181311",
             "text-sub": "#896f61",
+            "border": "#f4f2f0",
           },
           fontFamily: {
             "display": ["Plus Jakarta Sans", "sans-serif"],
@@ -46,6 +52,7 @@
       },
     }
   </script>
+
   <?php wp_head(); ?>
 </head>
 
@@ -112,6 +119,7 @@
 
       <div class="mt-auto p-6 border-t border-gray-100 dark:border-white/10 flex flex-col gap-3">
           <button
+            onclick="window.location.href='#why-visit'"
             class="w-full bg-primary hover:bg-orange-600 text-white text-base font-bold h-12 px-8 rounded-lg shadow-lg hover:shadow-primary/30 transition-all">
             Start Your Journey
           </button>
@@ -127,13 +135,26 @@
   <?php if (is_front_page()): ?>
     <header class="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
 
-      <div class="absolute inset-0 z-0">
-        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-          <source src="/wp-content/uploads/2026/01/camotes_trimmed.mp4"
-            type="video/mp4" />
-          <!-- Fallback text -->
+      <div class="absolute inset-0 z-0 overflow-hidden">
+        <!-- Video Background -->
+        <video 
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          class="absolute top-1/2 left-1/2 w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80">
+          <source src="/wp-content/uploads/2026/01/camotes_trimmed.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <!-- YouTube Background
+        <iframe 
+          src="https://www.youtube.com/embed/ZiBgWrq8EB8?autoplay=1&mute=1&controls=0&loop=1&playlist=ZiBgWrq8EB8&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1" 
+          class="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80"
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe> -->
+        
         <div
           class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-background-light dark:to-background-dark z-10">
         </div>
@@ -148,6 +169,7 @@
         </p>
         <div class="hidden md:flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
+            onclick="window.location.href='#why-visit'"
             class="bg-primary hover:bg-orange-600 text-white text-base font-bold h-12 px-8 rounded-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1">
             Start Your Journey
           </button>

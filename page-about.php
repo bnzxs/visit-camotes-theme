@@ -153,7 +153,7 @@ get_header();
 
     <section class="relative py-20 overflow-hidden min-h-[600px] flex items-center">
         <!-- Parallax Background Image -->
-        <img src="http://visit-camotes.local/wp-content/uploads/2026/01/about-values-bg.webp" 
+        <img src="/wp-content/uploads/2026/01/about-values-bg.webp" 
              alt="Camotes Scenic Background" 
              class="absolute left-0 top-[-10%] w-full h-[120%] object-cover parallax-bg pointer-events-none">
         

@@ -302,7 +302,7 @@ add_action('wp', 'visitcamotes_trigger_404_if_needed');
 
 // Define your Gemini API Key here (or in wp-config.php for better security)
 if (!defined('GEMINI_API_KEY')) {
-    define('GEMINI_API_KEY', 'AIzaSyDgncd6rfIn3ARjoztcEEe3G3jeEFLPoGA');
+    define('GEMINI_API_KEY', 'AIzaSyCVjA4dpjQoZgKLtMGJ0tsRmZmAMIdMU3g');
 }
 
 /**
