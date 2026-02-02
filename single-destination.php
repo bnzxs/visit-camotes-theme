@@ -327,6 +327,17 @@ get_header();
         </button>
     </div>
     <?php } ?>
+    <!-- Ad Placeholder: Single Destination Middle -->
+    <div class="w-full max-w-[1440px] mx-auto px-6 lg:px-20 mt-12 mb-0">
+        <div class="flex flex-col items-center justify-center py-8 bg-gray-50 dark:bg-white/5 border border-dashed border-gray-200 dark:border-white/10 rounded-xl relative overflow-hidden group">
+            <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
+            <div class="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
+                <span class="material-symbols-outlined text-4xl">ads_click</span>
+                <span class="text-sm font-medium">Relevance Ad Content</span>
+                <span class="text-xs opacity-75">(In-Content Banner)</span>
+            </div>
+        </div>
+    </div>
 </main>
 
 <script>
@@ -400,6 +411,7 @@ get_header();
     $s_img2 = get_post_meta($post_id, '_spotlight_image_2', true) ?: "https://lh3.googleusercontent.com/aida-public/AB6AXuDVC81v8PVqGwXjYHSTGQ9gWk4Gakbq9SvCXw0pcBUr54TNFfkT8v6ghNbuv4HVP_liN_S-iBfXWwJQ1lA6J43on050qHk-RSA6Nr6AsHWpZ6rz2cvMptNDxikUoRdgQBhfbYZeqHStOK2mmg0Ef0oA94l8yuOEs6L8GyTx_f377SQcQ4HHaGUmP3U3F2i0VBMagP94gmxBwiKr4ZHOHZZGesze5ulKpxOKKd-ZaAOnQ3sczvhfxeAhUYVVxoZU2toSQNJOjbzPfkSF";
     $s_icon = get_post_meta($post_id, '_spotlight_icon', true) ?: "light_mode";
 ?>
+
 <section class="w-full bg-[#221610] text-white py-20 px-6 lg:px-20 overflow-hidden relative">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ee6c2b_1px,transparent_1px)] [background-size:16px_16px]"></div>
     <div class="max-w-[1440px] mx-auto relative z-10">
@@ -454,102 +466,196 @@ get_header();
     </div>
 </div>
 
-<div class="w-full my-12 dark:bg-[#181311] py-12">
-    <div class=" flex justify-center">
-        <div class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full">
-            <div class="flex items-end justify-between pb-6">
-                <div>
-                    <h2 class="text-[#181311] dark:text-white tracking-tight text-[28px] font-bold leading-tight">
-                        Unforgettable Experiences</h2>
-                    <p class="text-[#896f61] dark:text-gray-400 mt-2">Curated activities to make your trip memorable.
-                    </p>
-                </div>
-                <div class="hidden md:flex gap-2">
-                    <button
-                        class="size-10 rounded-full border border-[#e6dfdb] dark:border-[#2f2521] flex items-center justify-center text-[#181311] dark:text-white hover:bg-[#f4f2f0] dark:hover:bg-[#2f2521]">
-                        <span class="material-symbols-outlined">arrow_back</span>
-                    </button>
-                    <button
-                        class="size-10 rounded-full border border-[#e6dfdb] dark:border-[#2f2521] flex items-center justify-center text-[#181311] dark:text-white hover:bg-[#f4f2f0] dark:hover:bg-[#2f2521]">
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">
-                    <div class="h-64 overflow-hidden rounded-xl relative">
-                        <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Hiker standing on a mountain peak looking at the view"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsEtMeAGCQfFVaiiQfbMsIZYU1kDpqvrQLioL2zGUgVZiCVNGAAKXiLdUNNGaPnCkn05P1FehcXDswT6jtD0E0NJEMD0expyFMPp30dYvvQnFOD2FVkWZpXW26nXmHTYsxbIuaHQy4ta-m9Z1hc8c6aZxpqrnyQjp9mJkZrx2gaDqkCn_5hXEISKYwMP3amWko6q6FhGPS7qZojXsSJ8cTB3L3qCBj3gBCKgAVGKmFUGEojGg7QnBqU0MixYWzLnFJs4kWM98GyQsv");'>
-                        </div>
-                        <div
-                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                            <span class="text-xs font-bold text-[#181311] dark:text-white">3 Days</span>
-                        </div>
-                    </div>
-                    <div class="px-4 pt-4 flex flex-col gap-2">
-                        <h3
-                            class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Highland Trekking</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Navigate the rugged peaks of
-                            the Northern range with expert guides.</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-bold text-primary">From $250</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">
-                    <div class="h-64 overflow-hidden rounded-xl relative">
-                        <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Colorful street food dishes on a table"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHw78Js846AGFTj5LtaT12ZEPOWEVYsVlLXY8ywX2X7_90O_L9164WM7wF5ogXwNAyHy_xRc9YCQAM5jZNySIuhq9obp1UL7RxgEfw8ogLyFQOUlHTINVndcW5A-jbxdyMwxH7f7r3_BOQTaPRNuPfKd-anX8vh7cMBu7rO_aTEtdbX9miA3h52Je4CSfcU78y6ok6oi6aHODJL4Nkuig6uY7sBSRUd4yV2hz9MRo02rUbNZwH0wqXY500UZSVYlLKAR3NcXSpisXF");'>
-                        </div>
-                        <div
-                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                            <span class="text-xs font-bold text-[#181311] dark:text-white">4 Hours</span>
-                        </div>
-                    </div>
-                    <div class="px-4 pt-4 flex flex-col gap-2">
-                        <h3
-                            class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Street Food Safari</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Taste the authentic flavors of
-                            the city in this guided evening tour.</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-bold text-primary">From $45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">
-                    <div class="h-64 overflow-hidden rounded-xl relative">
-                        <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Person doing pottery in a workshop"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAd4JSBVrWF5MHuRx5qSlw0U3cTV24eLfBSSrvJGdtddxmEV5DdWituynNXZcTkUQOomU74qHqij-r_-CR-RnXmqyyFQAVL4LbrSsAggzedayk1BsiZBqrKZjwSyZUHPNeLBAWKJ6R5y8N_zJd-eqUt5uXTKA_uykak2mINJuFVO4GtKzY_a_Rkvr8JpYXu35ACTp-Y56ev656EzPuJwPVtZwAK-kBYq8BzH1XGSDSvoJGJedzpdmrhm8BGslcJ5jFVEAIXWxbwAEEu");'>
-                        </div>
-                        <div
-                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                            <span class="text-xs font-bold text-[#181311] dark:text-white">1 Day</span>
-                        </div>
-                    </div>
-                    <div class="px-4 pt-4 flex flex-col gap-2">
-                        <h3
-                            class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Traditional Artisan Workshop</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Learn local crafts from master
-                            artisans in the historic quarter.</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-bold text-primary">From $80</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="w-full max-w-[1200px] mx-auto px-6 lg:px-20 py-20">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#181311] dark:text-white mb-3">Explore <span class="text-primary"><?php the_title(); ?></span></h2>
+        <p class="text-[#896f61] dark:text-gray-400">Discover experiences waiting for you in <?php the_title(); ?>.</p>
+    </div>
+    
+    <!-- 360° Viewer Container -->
+    <div class="bg-[#f4f2f0] dark:bg-[#2c2420] rounded-2xl overflow-hidden relative">
+        <div id="viewer-360" class="w-full h-[500px]"></div>
+        
+        <!-- 360° Indicator -->
+        <div class="absolute top-4 left-4 bg-white/90 dark:bg-[#181311]/90 backdrop-blur-md px-3 py-2 rounded-lg shadow-lg flex items-center gap-2 pointer-events-none z-10">
+            <span class="material-symbols-outlined text-primary text-[20px] animate-pulse">360</span>
+            <span class="text-xs font-bold text-[#181311] dark:text-white">Drag to explore • Scroll to zoom</span>
+        </div>
+        
+        <!-- Area Buttons -->
+        <div class="w-full absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-wrap gap-3 justify-center pointer-events-none px-6 z-10">
+            <button 
+                data-panorama="/wp-content/uploads/2026/02/tomas-cocacola-4AxeQEi0gQc-unsplash-scaled.webp"
+                onclick="changePanorama(this)"
+                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
+                <span class="material-symbols-outlined text-[18px]">beach_access</span>
+                Beach Area
+            </button>
+            <button 
+                data-panorama="/wp-content/uploads/2026/02/hugo-rouquette-8RrDGp_4S9E-unsplash-scaled.webp"
+                onclick="changePanorama(this)"
+                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
+                <span class="material-symbols-outlined text-[18px]">cottage</span>
+                Cottage
+            </button>
+            <button 
+                data-panorama="https://placeholder.pics/svg/300/entrance"
+                onclick="changePanorama(this)"
+                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
+                <span class="material-symbols-outlined text-[18px]">door_front</span>
+                Entrance
+            </button>
+            <button 
+                data-panorama="https://placeholder.pics/svg/300/lobby"
+                onclick="changePanorama(this)"
+                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
+                <span class="material-symbols-outlined text-[18px]">meeting_room</span>
+                Lobby
+            </button>
         </div>
     </div>
-</div>
-<?php
+</section>
 
-get_footer();
-?>
+<!-- Photo Sphere Viewer CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css"/>
+
+<!-- Custom CSS for subtle error messages -->
+<style>
+/* Completely hide the large error icon and message */
+.psv-loader-container {
+    display: none !important;
+}
+
+/* Hide the default error notification */
+.psv-notification {
+    display: none !important;
+}
+
+/* Style the error state container - only affects the viewer, not buttons */
+.psv-container--error {
+    background: rgba(244, 242, 240, 0.5) !important;
+    position: relative;
+}
+
+.psv-container.psv-container--error {
+    background: rgba(244, 242, 240, 0.5) !important;
+}
+
+/* Add a subtle error message - positioned to not cover buttons */
+.psv-container--error::after {
+    content: 'Unable to load 360° view';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+    max-width: 200px;
+}
+
+/* Dark mode support */
+.dark .psv-container--error {
+    background: rgba(44, 36, 32, 0.5) !important;
+}
+
+.dark .psv-container--error::after {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Hide loading spinner and text */
+.psv-loader {
+    display: none !important;
+}
+
+.psv-loader-canvas {
+    display: none !important;
+}
+
+/* Ensure the viewer container doesn't overflow and cover buttons */
+#viewer-360 {
+    position: relative;
+    z-index: 1;
+}
+
+.psv-overlay-image {
+    width: unset;
+}
+
+.psv-overlay-image svg {
+    margin: auto;
+}
+</style>
+
+<!-- Photo Sphere Viewer JS -->
+<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+
+<script>
+// Initialize 360° Photo Sphere Viewer
+const viewer = new PhotoSphereViewer.Viewer({
+    container: document.getElementById('viewer-360'),
+    panorama: '/wp-content/uploads/2026/02/timothy-oldfield-luufnHoChRU-unsplash-scaled.webp',
+    
+    // Navigation settings
+    defaultZoomLvl: 50,
+    minFov: 30,
+    maxFov: 90,
+    
+    // Mouse/touch controls
+    mousewheel: true,
+    mousemove: true,
+    touchmoveTwoFingers: false,
+    
+    // UI settings
+    navbar: [
+        'zoom',
+        'fullscreen',
+    ],
+    
+    // Performance
+    fisheye: false,
+    moveSpeed: 1.5,
+    zoomSpeed: 2,
+    
+    // Loading
+    loadingImg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="40" stroke="%23ee6c2b" stroke-width="4" fill="none"/></svg>',
+    loadingTxt: 'Loading...',
+});
+
+// Handle errors more gracefully
+viewer.addEventListener('error', (e) => {
+    console.warn('360° Viewer:', e.detail.message);
+    // Show a subtle notification instead of the default error
+    viewer.notification.show({
+        content: 'Unable to load panorama',
+        timeout: 3000,
+    });
+});
+
+// Change panorama function
+function changePanorama(button) {
+    const panoramaUrl = button.getAttribute('data-panorama');
+    
+    // Remove active state from all buttons
+    const allButtons = document.querySelectorAll('.area-btn');
+    allButtons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-white');
+        btn.classList.add('bg-white/95', 'dark:bg-[#181311]/95', 'text-[#181311]', 'dark:text-white');
+    });
+    
+    // Add active state to clicked button
+    button.classList.remove('bg-white/95', 'dark:bg-[#181311]/95', 'text-[#181311]', 'dark:text-white');
+    button.classList.add('bg-primary', 'text-white');
+    
+    // Change the panorama with smooth transition
+    viewer.setPanorama(panoramaUrl, {
+        transition: 1500,
+        showLoader: true,
+    });
+}
+</script>
+<?php get_footer(); ?>

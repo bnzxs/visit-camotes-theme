@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </div>
 
-<div class="w-full mt-0 bg-white dark:bg-[#181311] py-12">
+<div class="w-full mt-0 bg-white dark:bg-[#181311] py-16">
     <div class=" flex justify-center">
         <div class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full">
             <div class="flex items-end justify-between pb-6">
@@ -427,35 +427,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 </script>
-
-<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20">
-    <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-[#181311] dark:text-white mb-3">Explore by Barangay</h2>
-        <p class="text-[#896f61] dark:text-gray-400">Discover experiences waiting for you across the Island.</p>
-    </div>
-    <div class="bg-[#f4f2f0] dark:bg-[#2c2420] rounded-2xl overflow-hidden h-[500px] relative group">
-        <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" data-location="Country Map View" style='background-image: url("https://placeholder.pics/svg/300");'>
-        </div>
-        <div class="absolute top-1/3 left-1/4 group/pin cursor-pointer">
-            <div class="w-4 h-4 bg-primary rounded-full animate-ping absolute"></div>
-            <div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white z-10 hover:scale-125 transition-transform"></div>
-            <div class="absolute -top-12 -left-12 bg-white dark:bg-[#181311] p-3 rounded-lg shadow-xl opacity-0 group-hover/pin:opacity-100 transition-opacity w-32 text-center pointer-events-none">
-                <p class="text-xs font-bold dark:text-white">Northern Highlands</p>
-                <p class="text-[10px] text-gray-500">12 Experiences</p>
-            </div>
-        </div>
-        <div class="absolute bottom-1/3 right-1/3 group/pin cursor-pointer">
-            <div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white z-10 hover:scale-125 transition-transform"></div>
-            <div class="absolute -top-12 -left-12 bg-white dark:bg-[#181311] p-3 rounded-lg shadow-xl opacity-0 group-hover/pin:opacity-100 transition-opacity w-32 text-center pointer-events-none">
-                <p class="text-xs font-bold dark:text-white">Coastal Bay</p>
-                <p class="text-[10px] text-gray-500">8 Experiences</p>
-            </div>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <button class="bg-white/90 dark:bg-[#181311]/90 backdrop-blur text-[#181311] dark:text-white px-6 py-3 rounded-lg font-bold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
-                Open Interactive Map
-            </button>
-        </div>
-    </div>
-</section>
 <?php get_footer(); ?>

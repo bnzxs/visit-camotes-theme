@@ -37,7 +37,7 @@ add_action( 'admin_enqueue_scripts', 'visitcamotes_admin_scripts' );
  * Render the Meta Box HTML.
  */
 function visitcamotes_render_destination_metabox( $post ) {
-    // Add Nonce field for security
+    // Nonce for security
     wp_nonce_field( 'visitcamotes_save_destination_meta', 'visitcamotes_destination_nonce' );
 
     // Retrieve existing values
@@ -144,7 +144,6 @@ function visitcamotes_render_destination_metabox( $post ) {
             var previewTarget = '#preview-' + inputTarget.replace('#', '');
             var removeBtn = btn.siblings('.vc-remove-btn');
 
-            // If the media frame already exists, reopen it.
             if (mediaFrame) {
                 mediaFrame.inputTarget = inputTarget;
                 mediaFrame.previewTarget = previewTarget;
@@ -153,7 +152,6 @@ function visitcamotes_render_destination_metabox( $post ) {
                 return;
             }
 
-            // Create the media frame.
             mediaFrame = wp.media({
                 title: 'Select or Upload Image',
                 button: {
