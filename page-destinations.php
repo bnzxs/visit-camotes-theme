@@ -56,7 +56,7 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
             <!-- Destinations Query Logic -->
             <?php
             $args = array(
-                'post_type'      => 'destination',
+                'post_type'      => 'destinations',
                 'posts_per_page' => -1,
                 'post_status'    => 'publish',
                 'fields'         => 'ids', // First stick to IDs for merging
@@ -65,7 +65,7 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
             );
             
             $final_query_args = array(
-                'post_type'      => 'destination',
+                'post_type'      => 'destinations',
                 'posts_per_page' => -1,
                 'post_status'    => 'publish',
             );

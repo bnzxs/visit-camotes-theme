@@ -173,7 +173,7 @@ function add_tailwind_classes_to_menu_links($atts, $item, $args)
         $is_active = in_array('current-menu-item', $item->classes) || $item->current;
         
         // Highlight "Destinations" if viewing a single destination
-        if (is_singular('destination') && $item->title === 'Destinations') {
+        if (is_singular('destinations') && $item->title === 'Destinations') {
             $is_active = true;
         }
 
@@ -205,9 +205,9 @@ function visitcamotes_breadcrumbs() {
     echo '<li><a href="' . esc_url(home_url('/')) . '" class="hover:text-primary transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">home</span>Home</a></li>';
     
     // Destinations Archive
-    if (is_singular('destination')) {
+    if (is_singular('destinations')) {
         echo '<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] opacity-40">chevron_right</span></li>';
-        echo '<li><a href="' . esc_url(get_post_type_archive_link('destination')) . '" class="hover:text-primary transition-colors">Destinations</a></li>';
+        echo '<li><a href="' . esc_url(home_url('/destinations/')) . '" class="hover:text-primary transition-colors">Destinations</a></li>';
     }
 
     // Blog Archive, Category, & Tag

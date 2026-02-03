@@ -443,7 +443,7 @@ get_header();
                         <span class="text-sm text-white/60">Location</span>
                     </div>
                 </div>
-                <a href="<?php echo esc_url($s_btn_url); ?>" class="inline-block mt-4 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all text-center">
+                <a href="#booking-section" class="inline-block mt-4 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all text-center">
                     <?php echo esc_html($s_btn_text); ?>
                 </a>
             </div>
@@ -459,6 +459,27 @@ get_header();
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Where to Stay Section -->
+<section id="properties-section" class="w-full py-20 bg-[#fbfaf8] dark:bg-[#120e0c]">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest mb-4">
+                    Accommodation
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white">
+                    Where to <span class="text-primary">Stay</span>
+                </h2>
+            </div>
+            <p class="text-[#896f61] dark:text-gray-400 max-w-md">
+                Choose from our handpicked selection of premium resorts and hotels in <?php the_title(); ?>.
+            </p>
+        </div>
+        <?php echo do_shortcode('[vc_property_cards columns="3"]'); ?>
+        <?php echo do_shortcode('[vc_booking_form]'); ?>
     </div>
 </section>
 

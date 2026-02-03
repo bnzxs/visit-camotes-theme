@@ -13,7 +13,7 @@ function visitcamotes_add_destination_metaboxes() {
         'visitcamotes_destination_details',
         __( 'Destination Spotlight & Ratings', 'visitcamotes' ),
         'visitcamotes_render_destination_metabox',
-        'destination',
+        'destinations',
         'normal',
         'high'
     );
@@ -26,7 +26,7 @@ add_action( 'add_meta_boxes', 'visitcamotes_add_destination_metaboxes' );
 function visitcamotes_admin_scripts( $hook ) {
     global $post;
     if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
-        if ( 'destination' === $post->post_type ) {
+        if ( 'destinations' === $post->post_type ) {
             wp_enqueue_media();
         }
     }
@@ -204,7 +204,7 @@ function visitcamotes_save_destination_metadata( $post_id ) {
     }
 
     // Check permissions
-    if ( isset( $_POST['post_type'] ) && 'destination' === $_POST['post_type'] ) {
+    if ( isset( $_POST['post_type'] ) && 'destinations' === $_POST['post_type'] ) {
         if ( ! current_user_can( 'edit_page', $post_id ) ) {
             return;
         }
