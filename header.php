@@ -1,5 +1,17 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Visit_Camotes
+ */
+?>
 <!DOCTYPE html>
 <html class="light" <?php language_attributes(); ?>>
+
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
@@ -58,6 +70,7 @@
 
 <body
   class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary selection:text-white">
+  <!-- Main Navigation -->
   <nav
     class="sticky top-0 z-50 w-full bg-white/90 dark:bg-[#181311]/90 backdrop-blur-md border-b border-[#f4f2f0] dark:border-[#3a2e28] transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,9 +96,9 @@
             <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
-      </div>
-    </div>
-  </nav>
+      </div><!-- .flex -->
+    </div><!-- .max-w-7xl -->
+  </nav><!-- .sticky -->
 
   <!-- Mobile Menu Container -->
   <div id="mobile-menu" class="fixed inset-0 z-[100] md:hidden pointer-events-none">
@@ -129,10 +142,11 @@
             Contact Us
           </button>
       </div>
-    </div>
-  </div>
+    </div><!-- #mobile-menu-drawer -->
+  </div><!-- #mobile-menu -->
 
   <?php if (is_front_page()): ?>
+    <!-- Hero Section (Front Page) -->
     <header class="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
 
       <div class="absolute inset-0 z-0 overflow-hidden">
@@ -183,8 +197,8 @@
 
       <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 text-white animate-bounce">
         <span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
-      </div>
-    </header>
+      </div><!-- .animate-bounce -->
+    </header><!-- hero-header -->
   <?php elseif (!is_front_page() && get_post_type() !== 'post' && !is_404()): ?>
     <?php
     $bg_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -193,6 +207,7 @@
         $bg_image = "https://lh3.googleusercontent.com/aida-public/AB6AXuCHw78Js846AGFTj5LtaT12ZEPOWEVYsVlLXY8ywX2X7_90O_L9164WM7wF5ogXwNAyHy_xRc9YCQAM5jZNySIuhq9obp1UL7RxgEfw8ogLyFQOUlHTINVndcW5A-jbxdyMwxH7f7r3_BOQTaPRNuPfKd-anX8vh7cMBu7rO_aTEtdbX9miA3h52Je4CSfcU78y6ok6oi6aHODJL4Nkuig6uY7sBSRUd4yV2hz9MRo02rUbNZwH0wqXY500UZSVYlLKAR3NcXSpisXF";
     }
     ?>
+    <!-- Hero Section (Subpages) -->
     <div class="relative w-full bg-background-light dark:bg-background-dark">
       <div class="relative flex min-h-[480px] flex-col gap-6 items-center justify-center p-4 text-center">
         <!-- Hero Background Image -->

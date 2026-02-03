@@ -1,7 +1,12 @@
-<?php
+<?php/**
+ * The template for displaying single destination posts.
+ *
+ * @package Visit_Camotes
+ */
 get_header();
 ?>
 
+<!-- Tag Navigation / Filter Bar -->
 <div class="sticky top-[64px] z-40 bg-white/95 dark:bg-[#181311]/95 backdrop-blur-sm border-b border-[#f4f2f0] dark:border-[#332b26] py-4 shadow-sm">
     <div class="w-full max-w-[1440px] mx-auto px-6 lg:px-20">
         <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
@@ -52,6 +57,7 @@ get_header();
     </div>
 </div>
 
+<!-- Destination Content -->
 <main class="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-12">
     <?php if (function_exists('visitcamotes_breadcrumbs')) visitcamotes_breadcrumbs(); ?>
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
@@ -412,6 +418,7 @@ get_header();
     $s_icon = get_post_meta($post_id, '_spotlight_icon', true) ?: "light_mode";
 ?>
 
+<!-- Monthly Spotlight Section -->
 <section class="w-full bg-[#221610] text-white py-20 px-6 lg:px-20 overflow-hidden relative">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ee6c2b_1px,transparent_1px)] [background-size:16px_16px]"></div>
     <div class="max-w-[1440px] mx-auto relative z-10">
@@ -466,6 +473,7 @@ get_header();
     </div>
 </div>
 
+<!-- 360 Degree Virtual Tour Section -->
 <section class="w-full max-w-[1200px] mx-auto px-6 lg:px-20 py-20">
     <div class="text-center mb-10">
         <h2 class="text-3xl font-bold text-[#181311] dark:text-white mb-3">Explore <span class="text-primary"><?php the_title(); ?></span></h2>

@@ -1,6 +1,10 @@
 <?php
 /**
  * Template Name: Home Page
+ *
+ * The template for displaying the home page.
+ *
+ * @package Visit_Camotes
  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -9,7 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
+<!-- Home Page Content -->
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-24">
+    <!-- Why Visit Section -->
     <section id="why-visit" class="flex flex-col md:flex-row gap-12 items-start justify-between">
         <div class="md:w-[30%] flex flex-col gap-6 sticky top-24 scroll-fade-element transition-opacity duration-300">
             <h2 class="text-text-main dark:text-white text-4xl font-bold leading-tight">
@@ -56,8 +62,8 @@ get_header();
                     <p class="text-white/80 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">Meet the friendliest people on earth.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </div><!-- .grid -->
+    </section><!-- Why Visit Section -->
     
     <!-- Ad Placeholder: Home Middle -->
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,6 +78,7 @@ get_header();
         </div>
     </div>
     
+    <!-- Featured Destinations Section -->
     <section class="flex flex-col gap-8">
         <div class="flex items-end justify-between">
             <h2 class="text-text-main dark:text-white text-3xl font-bold">Featured Destinations</h2>
@@ -130,7 +137,7 @@ get_header();
                 <p class="text-text-sub dark:text-gray-400 text-sm mt-1">Peaceful waters and lush forests.</p>
             </div>
         </div>
-    </section>
+    </section><!-- Featured Destinations Section -->
 
     <!-- Ad Placeholder: Home Middle -->
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,6 +152,7 @@ get_header();
         </div>
     </div>
 
+    <!-- Experiences Section -->
     <section class="bg-white dark:bg-[#2a1d17] rounded-3xl p-8 md:p-12 shadow-sm">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">Unforgettable Experiences</h2>
@@ -191,7 +199,8 @@ get_header();
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- Experiences Section -->
+    <!-- Itineraries Section -->
     <section>
         <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
             <div>
@@ -215,7 +224,7 @@ get_header();
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="bg-white dark:bg-[#1f1612] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-[#3a2e28]">
                 <div class="h-48 relative">
-                    <img alt="Van parked on a scenic road" class="w-full h-full object-cover" data-alt="Van parked on a scenic road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7eIk5DoPZeqrunxgLRbELSMNGNqRIlAacmA5HICOIm26oqTCiovNc0GJlekwNCQYTU6pldcU0H2glQ-Qfeu0-kJ8zdx_Kk1Fud08HK8ExZAKJkn2TOk2A-j_Dniyc2lcMsWQ7O1F7gJP0-vBaM0Vfqc47SqtoB_XWM2m7Z4e_nOxxKcUrBjkW3nNpx2PBf6eC0yVRPkroqjv3cjdAPj0ysG-E8jpDKctoC_Fcog9_vNKIVFGj29uWBDAkaukFwSta6Pbnyzn9iQKF"/>
+                    <img alt="Van parked on a scenic road" class="w-full h-full object-cover" data-alt="Van parked on a scenic road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7eIk5DoPZeqrunxgLRbELSMNGNqRIlAacmA5HICOIm26oqTCiovNc0GJlekwNCQYTU6pldcU0H2glQ-Qfeu0-kJ8zdx_Kk1Fud08HK_ExZAKJkn2TOk2A-j_Dniyc2lcMsWQ7O1F7gJP0-vBaM0Vfqc47SqtoB_XWM2m7Z4e_nOxxKcUrBjkW3nNpx2PBf6eC0yVRPkroqjv3cjdAPj0ysG-E8jpDKctoC_Fcog9_vNKIVFGj29uWBDAkaukFwSta6Pbnyzn9iQKF"/>
                     <div class="absolute bottom-3 left-3 bg-white/90 text-text-main text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
                         <span class="material-symbols-outlined text-[14px]">schedule</span> 10 Days
                     </div>
@@ -263,7 +272,8 @@ get_header();
             </div>
         </div>
         <?php endif; ?>
-    </section>
+    </section><!-- Itineraries Section -->
+    <!-- Travel Essentials Section -->
     <section class="border-t border-gray-200 dark:border-gray-800 pt-16">
         <h2 class="text-2xl font-bold text-text-main dark:text-white mb-8">Travel Essentials</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -296,9 +306,9 @@ get_header();
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </div><!-- .grid -->
+    </section><!-- Travel Essentials -->
+</main><!-- .max-w-7xl -->
 
 <?php
 get_footer();

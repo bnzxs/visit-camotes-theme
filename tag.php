@@ -1,6 +1,8 @@
 <?php
 /**
  * The template for displaying tag archives
+ *
+ * @package Visit_Camotes
  */
 
 get_header();
@@ -23,6 +25,7 @@ $grid_query = new WP_Query($grid_args);
 ?>
 
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-8">
+  <!-- Archive Header -->
   <header class="mb-8 border-b border-gray-100 dark:border-gray-800 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
     <div class="flex-1">
       <?php if (function_exists('visitcamotes_breadcrumbs')) visitcamotes_breadcrumbs(); ?>
@@ -49,6 +52,7 @@ $grid_query = new WP_Query($grid_args);
 
   <section class="mb-20">
     <?php if ($grid_query->have_posts()) : ?>
+    <!-- Main Posts Loop -->
     <div id="posts-container" class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 transition-all duration-300">
       <?php while ($grid_query->have_posts()) : $grid_query->the_post(); 
         $categories = get_the_category();
@@ -85,6 +89,7 @@ $grid_query = new WP_Query($grid_args);
     </div>
 
     <?php if ($grid_query->max_num_pages > 1) : ?>
+    <!-- Pagination -->
     <div class="mt-16 flex items-center justify-center gap-4">
       <?php if ($paged > 1) : ?>
       <a href="<?php echo esc_url(get_pagenum_link($paged - 1)); ?>" class="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-gray-800 editorial-shadow text-gray-400 hover:text-primary transition-colors">

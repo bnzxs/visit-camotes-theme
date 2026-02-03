@@ -1,6 +1,11 @@
 <?php
 /**
  * Template Name: Planning Page
+ *
+ * The template for displaying travel planning information, ferry schedules,
+ * and essential travel tips.
+ *
+ * @package Visit_Camotes
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -10,6 +15,7 @@ get_header();
 ?>
 
 <div class="flex flex-col lg:flex-row max-w-[1280px] mx-auto px-4 md:px-8 py-10 gap-10">
+    <!-- Sidebar / Table of Contents -->
     <aside class="hidden lg:block w-64 shrink-0 sticky top-24 h-fit">
         <div
             class="flex flex-col gap-6 p-6 bg-white dark:bg-[#1e1e1e] rounded-xl border border-[#e6dfdb] dark:border-[#333] shadow-sm">
@@ -71,6 +77,7 @@ get_header();
             </div>
         </div>
     </aside>
+    <!-- Main Planning Content Area -->
     <main class="flex-1 flex flex-col gap-12 min-w-0">
         <section class="flex flex-col gap-6 scroll-mt-28" id="essentials">
             <div class="flex flex-col gap-2">

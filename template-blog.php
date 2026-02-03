@@ -1,6 +1,11 @@
 <?php
 /**
  * Template Name: Blog Page
+ *
+ * The template for displaying the main blog index with a featured post,
+ * category filtering, and post grid.
+ *
+ * @package Visit_Camotes
  */
 
 get_header();
@@ -40,6 +45,7 @@ $grid_query = new WP_Query($grid_args);
 
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-8">
   <?php if ($featured_query->have_posts()) : $featured_query->the_post(); ?>
+  <!-- Featured Post Section -->
   <section>
     <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-900 editorial-shadow">
       <div class="flex flex-col lg:flex-row items-stretch">
@@ -90,6 +96,7 @@ $grid_query = new WP_Query($grid_args);
     </div>
   </div>
 
+  <!-- Category Filter Section -->
   <section>
     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-6">
       <div class="flex gap-2 flex-wrap">
@@ -122,6 +129,7 @@ $grid_query = new WP_Query($grid_args);
   </section>
 
 
+  <!-- Main Blog Grid -->
   <section class="mb-20">
     <?php if ($grid_query->have_posts()) : ?>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -160,6 +168,7 @@ $grid_query = new WP_Query($grid_args);
     </div>
 
     <?php if ($grid_query->max_num_pages > 1) : ?>
+    <!-- Pagination -->
     <div class="mt-16 flex items-center justify-center gap-4">
       <?php if ($paged > 1) : ?>
       <a href="<?php echo esc_url(get_pagenum_link($paged - 1)); ?>" class="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-gray-800 editorial-shadow text-gray-400 hover:text-primary transition-colors">

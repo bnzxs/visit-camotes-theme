@@ -1,6 +1,8 @@
 <?php
 /**
- * Search Results Template
+ * The template for displaying search results
+ *
+ * @package Visit_Camotes
  */
 
 get_header();
@@ -20,6 +22,7 @@ get_header();
         </p>
     </header>
 
+    <!-- Search Results Loop -->
     <?php if ( have_posts() ) : ?>
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
             <?php while ( have_posts() ) : the_post(); 
@@ -64,6 +67,7 @@ get_header();
             <?php endwhile; ?>
         </div>
 
+        <!-- Pagination -->
         <?php
         the_posts_pagination( array(
             'mid_size'  => 2,
@@ -73,6 +77,7 @@ get_header();
         ) );
         ?>
 
+    <!-- No Results Section -->
     <?php else : ?>
         <div class="flex flex-col items-center justify-center py-20 text-center">
             <div class="mb-8 rounded-full bg-gray-100 dark:bg-gray-800 p-8">

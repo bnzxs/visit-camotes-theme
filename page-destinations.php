@@ -1,6 +1,11 @@
 <?php
 /**
  * Template Name: Destination Page
+ *
+ * The template for displaying all destinations with category filtering 
+ * and grid/list view toggles.
+ *
+ * @package Visit_Camotes
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -12,6 +17,7 @@ get_header();
 <?php
 $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : 'all';
 ?>
+<!-- Category Navigation Sticky Bar -->
 <div
     class="w-full sticky top-[64px] z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-[#e6dfdb] dark:border-[#2f2521]">
     <div class=" flex justify-center py-2">
@@ -47,6 +53,7 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
 <div class="w-full mt-8">
     <div class=" flex justify-center py-5">
         <div class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full">
+            <!-- Destinations Query Logic -->
             <?php
             $args = array(
                 'post_type'      => 'destination',
@@ -130,6 +137,7 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
 <div class="w-full">
     <div class=" flex justify-center py-2">
         <div id="destinations-container" class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full gap-6">
+            <!-- Destinations Loop -->
             <?php
 
 
@@ -221,7 +229,7 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
                 echo '<p class="text-center text-[#896f61] dark:text-gray-400">No destinations found.</p>';
             endif;
             ?>
-        </div>
+        </div><!-- #destinations-container -->
     </div>
 </div>
 
@@ -311,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </div>
 
+<!-- Experiences Recommendation Section -->
 <div class="w-full mt-0 bg-white dark:bg-[#181311] py-16">
     <div class=" flex justify-center">
         <div class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full">

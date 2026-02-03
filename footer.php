@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Visit_Camotes
+ */
+?>
+
+<!-- Footer Section -->
 <footer class="bg-[#181311] text-white pt-20 pb-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-primary rounded-2xl p-8 md:p-16 text-center relative overflow-hidden mb-16">
@@ -10,8 +23,8 @@
                     <input class="flex-1 px-4 py-3 rounded-lg text-text-main focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Enter your email" type="email"/>
                     <button class="bg-[#181311] hover:bg-black text-white font-bold px-6 py-3 rounded-lg transition-colors">Subscribe</button>
                 </div>
-            </div>
-        </div>
+            </div><!-- .relative z-10 -->
+        </div><!-- .bg-primary -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-white/10 pb-12">
             <div>
                 <h4 class="font-bold text-lg mb-4">Explore</h4>
@@ -49,9 +62,9 @@
                     <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
                     <span class="text-sm font-bold">YT</span>
                     </a>
-                </div>
-            </div>
-        </div>
+                </div><!-- .flex gap-4 -->
+            </div><!-- Follow Us Column -->
+        </div><!-- .grid -->
         <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-4">
             <p>© <?php echo esc_html( wp_date('Y') ); ?> <span class="text-primary"><?php bloginfo('name'); ?></span> Tourism Board. All rights reserved.</p>
             <div class="flex gap-6">
@@ -59,9 +72,11 @@
                 <a class="hover:text-white" href="#">Terms of Service</a>
             </div>
         </div>
-    </div>
-</footer>
+    </div><!-- .max-w-7xl -->
+</footer><!-- .bg-[#181311] -->
 <?php wp_footer(); ?>
+
+<!-- Main Client-Side Interactions -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -186,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
+<!-- Dynamic Table of Contents for Planning Page -->
 <script>
   // Dynamic Table of Contents for Planning Page
   const guideNav = document.getElementById("guide-nav");
@@ -248,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 </script>
 
+<!-- AI Search Assistant Logic -->
 <script>
   // AI Search Assistant Logic
   document.addEventListener('DOMContentLoaded', function() {
@@ -401,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
+<!-- Professional Smooth Scroll for URL Parameters -->
 <script>
 /**
  * Professional Smooth Scroll for URL Parameters

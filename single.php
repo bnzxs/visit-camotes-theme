@@ -1,6 +1,10 @@
 <?php
 /**
  * Single Post Template
+ *
+ * The template for displaying all single posts and blog entries.
+ *
+ * @package Visit_Camotes
  */
 
 get_header();
@@ -11,6 +15,7 @@ while (have_posts()) : the_post();
     $reading_time = ceil(str_word_count(strip_tags(get_the_content())) / 200); // Approx reading time
 ?>
 
+<!-- Main Article Container -->
 <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
     <header class="mb-8">
         <?php if (function_exists('visitcamotes_breadcrumbs')) visitcamotes_breadcrumbs(); ?>
@@ -280,6 +285,7 @@ while (have_posts()) : the_post();
             <?php endif; ?>
 
             <?php if (get_the_author_meta('description')) : ?>
+            <!-- Author Biography Section -->
             <div class="mb-16 p-8 rounded-xl bg-gray-50 dark:bg-gray-900">
                 <div class="flex gap-6 items-start">
                     <?php echo get_avatar(get_the_author_meta('ID'), 80, '', '', array('class' => 'rounded-full')); ?>
@@ -387,6 +393,7 @@ if ($related_query->have_posts()) : ?>
         </div>
     </div>
 
+<!-- Related Stories Grid -->
 <section class="bg-gray-50 dark:bg-gray-900 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-[#121617] dark:text-white mb-8">Related Stories</h2>

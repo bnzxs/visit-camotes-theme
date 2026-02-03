@@ -1,12 +1,18 @@
 <?php
 /**
  * Template Name: About Us Page
+ *
+ * This template displays the 'About Us' page content, including mission, vision,
+ * team members, and core values.
+ *
+ * @package Visit_Camotes
  */
 
 get_header();
 ?>
 
 <main class="min-h-screen bg-white dark:bg-[#0a0a0a]">
+    <!-- Hero / Our Purpose Section -->
     <section class="py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -48,6 +54,7 @@ get_header();
         </div>
     </section>
 
+    <!-- Mission & Vision Section -->
     <section class="py-20 bg-gray-50 dark:bg-[#0f0f0f]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -72,7 +79,8 @@ get_header();
             </div>
         </div>
     </section>
-
+ 
+    <!-- Team Section -->
     <section class="py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20 space-y-4">
@@ -151,6 +159,7 @@ get_header();
         </div>
     </section>
 
+    <!-- Core Values Section (Parallax) -->
     <section class="relative py-20 overflow-hidden min-h-[600px] flex items-center">
         <!-- Parallax Background Image -->
         <img src="/wp-content/uploads/2026/01/about-values-bg.webp" 
@@ -194,6 +203,7 @@ get_header();
         </div>
     </section>
 
+    <!-- Call to Action Section -->
     <section class="py-32 relative overflow-hidden">
         <div class="absolute top-1/4 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
