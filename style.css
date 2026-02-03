@@ -123,6 +123,17 @@ li.menu-item {
 
 #blog-content p {
   margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+#blog-content .wp-block-list {
+  list-style: circle;
+  padding-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.wp-block-quote::before {
+  display: none;
 }
 
 @media print {

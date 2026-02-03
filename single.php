@@ -53,7 +53,7 @@ while (have_posts()) : the_post();
     </div>
     <?php endif; ?>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div class="lg:col-span-8">
             <div id="blog-content" class="prose prose-lg dark:prose-invert max-w-none mb-16
                         /* Typography */
@@ -210,7 +210,7 @@ $related_query = new WP_Query($related_args);
 
 if ($related_query->have_posts()) : ?>
 
-    <!-- Ad Placeholder: Single Post Bottom -->
+    <!-- Ad Placeholder: Single Post Bottom 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div class="flex flex-col items-center justify-center p-8 bg-white dark:bg-gray-800 border border-dashed border-gray-200 dark:border-gray-700 rounded-xl relative overflow-hidden group">
             <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
@@ -219,9 +219,9 @@ if ($related_query->have_posts()) : ?>
                 <span class="text-sm font-medium">Content Ad Slot</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
-<!-- Related Stories Grid -->
+<!-- Related Stories Grid
 <section class="bg-gray-50 dark:bg-gray-900 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-[#121617] dark:text-white mb-8">Related Stories</h2>
@@ -251,7 +251,7 @@ if ($related_query->have_posts()) : ?>
             <?php endwhile; wp_reset_postdata(); ?>
         </div>
     </div>
-</section>
+</section> -->
 <?php endif; ?>
 
 <?php endwhile; ?>
