@@ -386,7 +386,7 @@ get_header();
                             </div>
                         </div>
                         <div class="mt-8 flex flex-wrap gap-3">
-                            <a href="https://www.facebook.com/JomaliaShipping/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166fe5] text-white rounded-full text-xs font-bold transition-colors">
+                            <a href="https://www.facebook.com/JomaliaShippingCorp" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166fe5] text-white rounded-full text-xs font-bold transition-colors">
                                 Facebook Page
                             </a>
                             <a href="https://www.jomaliashipping.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-xs font-bold transition-colors">

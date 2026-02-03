@@ -25,7 +25,7 @@
             <div>
                 <h4 class="font-bold text-lg mb-4">Planning</h4>
                 <ul class="space-y-2 text-gray-400 text-sm">
-                    <li><a class="hover:text-primary" href="/planning-tips/#transport">Getting Around</a></li>
+                    <li><a class="hover:text-primary" href="/planning-tips/?scroll_to=transport">Getting Around</a></li>
                     <li><a class="hover:text-primary" href="#">Accommodations</a></li>
                 </ul>
             </div>
@@ -399,6 +399,39 @@ document.addEventListener("DOMContentLoaded", () => {
       aiResponseContainer.classList.add('hidden');
     });
   });
+</script>
+
+<script>
+/**
+ * Professional Smooth Scroll for URL Parameters
+ * Handles ?scroll_to=section-id for a subtle, professional feel
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollToId = urlParams.get('scroll_to');
+
+    if (scrollToId) {
+        const targetElement = document.getElementById(scrollToId);
+        
+        if (targetElement) {
+            // Wait slightly for the page to settle (professional feel)
+            setTimeout(() => {
+                const headerOffset = 100; // Account for sticky header
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Clean up URL without refreshing (professional touch)
+                const newUrl = window.location.pathname + (window.location.hash || '');
+                window.history.replaceState({}, document.title, newUrl);
+            }, 600);
+        }
+    }
+});
 </script>
 
 </body>

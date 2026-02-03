@@ -86,6 +86,10 @@ li.menu-item {
   -webkit-font-smoothing: antialiased;
 }
 
+.separator {
+  margin-left: .4rem;
+}
+
 .contact-item:last-child .separator {
   display: map;
 }

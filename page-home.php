@@ -274,7 +274,7 @@ get_header();
                     <div>
                         <h3 class="font-bold text-lg text-text-main dark:text-white">Getting There</h3>
                         <p class="text-sm text-text-sub dark:text-gray-400 mt-1">Daily ferries run from Danao City and Mactan (Pier 1) to Consuelo or Poro Port. Check schedules in advance.</p>
-                        <a class="text-sm font-medium text-primary mt-2 block hover:underline" href="/planning-tips/#ferry-schedules">Ferry schedules</a>
+                        <a class="text-sm font-medium text-primary mt-2 block hover:underline" href="/planning-tips/?scroll_to=ferry-schedules">Ferry schedules</a>
                     </div>
                 </div>
                 <div class="flex gap-4">
