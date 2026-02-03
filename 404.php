@@ -12,9 +12,7 @@ get_header(); ?>
     <section class="relative py-20 md:py-32 overflow-hidden bg-background-light dark:bg-background-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="mb-8 flex justify-center">
-                <span class="material-symbols-outlined text-[120px] md:text-[180px] text-primary/20 absolute -top-10 md:-top-20 left-1/2 -translate-x-1/2 select-none">
-                    travel_explore
-                </span>
+                <img src="/wp-content/uploads/2026/01/VisitCamotes-Logo-e1769568648963.webp" alt="<?php bloginfo('name'); ?>" class="h-[120px] md:h-[180px] w-auto opacity-10 absolute -top-10 md:-top-20 left-1/2 -translate-x-1/2 select-none pointer-events-none">
                 <h1 class="text-7xl md:text-9xl font-black text-primary relative">404</h1>
             </div>
             
@@ -44,7 +42,7 @@ get_header(); ?>
                     <span class="text-xs font-black uppercase tracking-[0.2em] text-primary mb-2 block">Don't Miss Out</span>
                     <h2 class="text-3xl md:text-4xl font-black text-[#121617] dark:text-white">Latest Stories & Tips</h2>
                 </div>
-                <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>" class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
+                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
                     View All Posts
                     <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
                 </a>
