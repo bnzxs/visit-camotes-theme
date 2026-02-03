@@ -44,12 +44,12 @@ while (have_posts()) : the_post();
     </header>
 
     <?php if (has_post_thumbnail()) : ?>
-    <div class="mb-8 rounded-xl overflow-hidden editorial-shadow relative h-[400px] md:h-[500px] lg:h-[510px]">
+    <div class="mb-8 rounded-xl overflow-hidden editorial-shadow relative h-[400px] md:h-[500px] lg:h-[510px] group">
         <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
              fetchpriority="high"
              loading="eager" 
              alt="<?php the_title_attribute(); ?>" 
-             class="absolute inset-0 w-full h-full object-cover">
+             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
     </div>
     <?php endif; ?>
 
@@ -67,7 +67,6 @@ while (have_posts()) : the_post();
                         
                         /* Images - Enhanced */
                         prose-img:rounded-2xl prose-img:my-8 prose-img:transition-all prose-img:duration-500
-                        hover:prose-img:shadow-2xl
                         prose-figure:my-8 prose-figure:mx-0 prose-figure:overflow-hidden prose-figure:rounded-2xl
                         prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:text-gray-500 dark:prose-figcaption:text-gray-400 prose-figcaption:mt-3 prose-figcaption:italic
                         
@@ -108,14 +107,22 @@ while (have_posts()) : the_post();
                     color: var(--wp--preset--color--primary, #ee6c2b);
                 }
                 
-                /* Enhanced Image Shadows */
-                #blog-content img {
+                 /* Enhanced Image Shadows & Smooth Hover */
+                #blog-content img,
+                .wp-block-image img,
+                .wp-block-gallery img {
                     box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+                    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                    border-radius: 1rem;
                 }
                 
-                #blog-content img:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.25);
+                #blog-content img:hover,
+                .wp-block-image img:hover,
+                .wp-block-gallery img:hover {
+                    transform: translateY(-5px) scale(1.01);
+                    box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.25);
+                    position: relative;
+                    z-index: 10;
                 }
                 
                 /* Alignment Classes Support */
