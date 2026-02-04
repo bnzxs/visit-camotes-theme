@@ -301,8 +301,14 @@ add_action('wp', 'visitcamotes_trigger_404_if_needed');
  */
 
 // Define your Gemini API Key here (or in wp-config.php for better security)
+require_once get_template_directory() . '/inc/class-env-loader.php';
+Theme_Env_Loader::load(get_template_directory() . '/.env');
+
 if (!defined('GEMINI_API_KEY')) {
-    define('GEMINI_API_KEY', 'AIzaSyCVjA4dpjQoZgKLtMGJ0tsRmZmAMIdMU3g');
+    $api_key = getenv('GEMINI_API_KEY');
+    if ($api_key) {
+        define('GEMINI_API_KEY', $api_key);
+    }
 }
 
 /**
