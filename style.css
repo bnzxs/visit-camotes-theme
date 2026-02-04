@@ -342,3 +342,15 @@ li.menu-item {
 .dark .psv-container--error::after {
   color: rgba(255, 255, 255, 0.4);
 }
+
+.psv-overlay {
+  z-index: 1 !important;
+}
+
+.psv-overlay-image {
+  width: 6rem !important;
+}
+
+.psv-overlay-image svg {
+  width: 100% !important;
+}

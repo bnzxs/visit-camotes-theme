@@ -9,7 +9,7 @@ get_header();
 
 <!-- Tag Navigation / Filter Bar -->
 <div class="sticky top-[64px] z-40 bg-white/95 dark:bg-[#181311]/95 backdrop-blur-sm border-b border-[#f4f2f0] dark:border-[#332b26] py-4 shadow-sm">
-    <div class="w-full max-w-[1440px] mx-auto px-6 lg:px-20">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
             <!-- Always show "All Experiences" first as active -->
             <button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#181311] dark:bg-white text-white dark:text-[#181311] transition-all hover:shadow-md shrink-0">
@@ -59,11 +59,11 @@ get_header();
 </div>
 
 <!-- Destination Content -->
-<main class="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-12">
+<main class="w-full max-w-7xl mx-auto px-6 lg:px-8 py-12">
     <?php if (function_exists('visitcamotes_breadcrumbs')) visitcamotes_breadcrumbs(); ?>
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#181311] dark:text-white mb-3">Curated Experiences</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Curated <span class="text-primary">Experiences</span></h2>
             <p class="text-[#896f61] dark:text-gray-400 max-w-xl">Handpicked activities that bring you closer to the heart of our country. From adrenaline-pumping adventures to soul-soothing retreats.</p>
         </div>
         <div class="flex gap-2">
@@ -335,7 +335,7 @@ get_header();
     </div>
     <?php } ?>
     <!-- Ad Placeholder: Single Destination Middle -->
-    <div class="w-full max-w-[1440px] mx-auto px-6 lg:px-20 mt-12 mb-0">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-8 mt-12 mb-0">
         <div class="flex flex-col items-center justify-center py-8 bg-gray-50 dark:bg-white/5 border border-dashed border-gray-200 dark:border-white/10 rounded-xl relative overflow-hidden group">
             <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
             <div class="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
@@ -462,29 +462,8 @@ get_header();
     </div>
 </section>
 
-<!-- Where to Stay Section -->
-<section id="properties-section" class="w-full py-20 bg-[#fbfaf8] dark:bg-[#120e0c]">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest mb-4">
-                    Accommodation
-                </span>
-                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white">
-                    Where to <span class="text-primary">Stay</span>
-                </h2>
-            </div>
-            <p class="text-[#896f61] dark:text-gray-400 max-w-md">
-                Choose from our handpicked selection of premium resorts and hotels in <?php the_title(); ?>.
-            </p>
-        </div>
-        <?php echo do_shortcode('[vc_property_cards columns="3"]'); ?>
-        <?php echo do_shortcode('[vc_booking_form]'); ?>
-    </div>
-</section>
-
 <!-- Ad Placeholder: Single Destination Middle -->
-<div class="w-full max-w-[1440px] mx-auto px-6 lg:px-20 mt-12 mb-0">
+<div class="w-full max-w-7xl mx-auto px-6 lg:px-8 mt-12 mb-0">
     <div class="flex flex-col items-center justify-center py-8 bg-gray-50 dark:bg-white/5 border border-dashed border-gray-200 dark:border-white/10 rounded-xl relative overflow-hidden group">
         <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
         <div class="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
@@ -494,11 +473,13 @@ get_header();
         </div>
     </div>
 </div>
-
 <!-- 360 Degree Virtual Tour Section -->
 <section class="w-full max-w-[1200px] mx-auto px-6 lg:px-20 py-20">
     <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-[#181311] dark:text-white mb-3">Explore <span class="text-primary"><?php the_title(); ?></span></h2>
+        <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest mb-4">
+            Virtual Tour
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Explore <span class="text-primary"><?php the_title(); ?></span></h2>
         <p class="text-[#896f61] dark:text-gray-400">Discover experiences waiting for you in <?php the_title(); ?>.</p>
     </div>
     
@@ -543,6 +524,40 @@ get_header();
                 Lobby
             </button>
         </div>
+    </div>
+</section>
+
+<!-- Ad Placeholder: Single Destination Middle -->
+<div class="w-full max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+    <div class="flex flex-col items-center justify-center py-8 bg-gray-50 dark:bg-white/5 border border-dashed border-gray-200 dark:border-white/10 rounded-xl relative overflow-hidden group">
+        <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
+        <div class="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
+            <span class="material-symbols-outlined text-4xl">ads_click</span>
+            <span class="text-sm font-medium">Relevance Ad Content</span>
+            <span class="text-xs opacity-75">(In-Content Banner)</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Where to Stay Section -->
+<section id="properties-section" class="w-full py-20 bg-[#fbfaf8] dark:bg-[#120e0c]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest mb-4">
+                    Accommodation
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white">
+                    Where to <span class="text-primary">Stay</span>
+                </h2>
+            </div>
+            <p class="text-[#896f61] dark:text-gray-400 max-w-md">
+                Choose from our handpicked selection of premium resorts and hotels in <?php the_title(); ?>.
+            </p>
+        </div>
+        <?php echo do_shortcode('[vc_property_cards columns="3"]'); ?>
+        <?php echo do_shortcode('[vc_booking_form]'); ?>
     </div>
 </section>
 
