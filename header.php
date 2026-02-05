@@ -35,36 +35,6 @@
   <!-- Google Fonts for Material Symbols (Fix for live site) 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />-->
 
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#ee6c2b",
-            "background-light": "#f8f6f6",
-            "background-dark": "#221610",
-            "text-main": "#181311",
-            "text-sub": "#896f61",
-            "border": "#f4f2f0",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans", "sans-serif"],
-            "body": ["Noto Sans", "sans-serif"],
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "2xl": "1rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-
   <?php wp_head(); ?>
 </head>
 
@@ -154,6 +124,8 @@
         <video 
           autoplay 
           muted 
+          fetchpriority="high"
+          loading="eager"
           loop 
           playsinline
           class="absolute top-1/2 left-1/2 w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80">

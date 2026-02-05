@@ -9,14 +9,12 @@ function style_enqueue_assets()
         wp_get_theme()->get('Version')
     );
 
-    /* Optional: extra custom CSS file
     wp_enqueue_style(
-        'wanderlust-custom',
-        get_template_directory_uri() . '/assets/css/custom.css',
-        ['wanderlust-style'],
+        'visitcamotes-tailwind',
+        get_template_directory_uri() . '/assets/css/output.css',
+        [],
         wp_get_theme()->get('Version')
     );
-    */
 }
 
 add_action('wp_enqueue_scripts', 'style_enqueue_assets');
