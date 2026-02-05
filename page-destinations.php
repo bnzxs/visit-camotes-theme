@@ -169,11 +169,11 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
                         <!-- List View Layout -->
                         <div class="list-view-card @container">
                             <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row<?php echo $is_reverse ? '-reverse' : ''; ?> @xl:items-stretch shadow-sm hover:shadow-md transition-shadow bg-white dark:bg-[#1f1a17] overflow-hidden border border-[#f4f2f0] dark:border-[#2f2521]">
-                            <div class="w-full @xl:w-1/2 bg-center bg-no-repeat min-h-[240px] bg-cover"
+                            <div class="w-full @xl:w-1/2 bg-center bg-no-repeat min-h-[300px] bg-cover shrink-0"
                                 data-alt="<?php echo esc_attr(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true)); ?>"
                                 style='background-image: url("<?php echo esc_url($thumbnail_url); ?>");'>
                             </div>
-                            <div class="flex w-full @xl:w-1/2 grow flex-col items-start justify-center gap-4 py-6 px-6">
+                            <div class="flex w-full @xl:w-1/2 grow flex-col items-start justify-center gap-4 py-8 px-8">
                                 <div class="flex flex-col gap-1">
                                     <div class="flex items-center gap-2 mb-1">
                                         <span
@@ -242,15 +242,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const listViewBtn = document.getElementById('list-view-btn');
     const container = document.getElementById('destinations-container');
 
+    // Function to handle showing all destinations
+    function showAllDestinations() {
+        if (!viewAllBtn || viewAllBtn.classList.contains('hidden')) return;
+        
+        // Reveal hidden cards
+        hiddenCards.forEach(card => card.classList.remove('hidden'));
+        // Toggle buttons
+        viewAllBtn.classList.add('hidden');
+        hideBtn.classList.remove('hidden');
+    }
+
     // View All / Hide Toggle
     if (viewAllBtn && hideBtn) {
         viewAllBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Reveal hidden cards
-            hiddenCards.forEach(card => card.classList.remove('hidden'));
-            // Toggle buttons
-            viewAllBtn.classList.add('hidden');
-            hideBtn.classList.remove('hidden');
+            showAllDestinations();
         });
 
         hideBtn.addEventListener('click', (e) => {
@@ -276,6 +283,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.grid-view-card').forEach(card => card.classList.remove('hidden'));
             document.querySelectorAll('.list-view-card').forEach(card => card.classList.add('hidden'));
             
+            // Automatically show all destinations when switching to grid
+            showAllDestinations();
+
             // Update button states
             gridViewBtn.classList.add('bg-white', 'dark:bg-[#1e1e1e]', 'text-[#181311]', 'dark:text-white', 'shadow-sm');
             gridViewBtn.classList.remove('text-[#896f61]');

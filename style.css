@@ -354,3 +354,17 @@ li.menu-item {
 .psv-overlay-image svg {
   width: 100% !important;
 }
+
+/* Container Query Overrides for List View */
+@container (min-width: 36rem) {
+  .\@xl\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+  .\@xl\:w-1\/2 {
+    width: 50% !important;
+  }
+}
+
+.min-h-\[300px\] {
+  min-height: 300px !important;
+}

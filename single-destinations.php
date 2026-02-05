@@ -67,16 +67,16 @@ get_header();
             <p class="text-[#896f61] dark:text-gray-400 max-w-xl">Handpicked activities that bring you closer to the heart of our country. From adrenaline-pumping adventures to soul-soothing retreats.</p>
         </div>
         <div class="flex gap-2">
-            <button id="view-grid-btn" class="p-2 rounded-lg bg-gray-50 border border-[#f4f2f0] dark:border-[#332b26] hover:bg-white dark:hover:bg-[#3a302a] transition-colors text-primary" onclick="setViewMode('grid')">
+            <button id="view-grid-btn" class="p-2 rounded-lg bg-gray-50 border border-[#f4f2f0] dark:border-[#332b26] hover:bg-white dark:hover:bg-[#3a302a] transition-colors text-[#896f61]" onclick="setViewMode('grid')">
                 <span class="material-symbols-outlined">grid_view</span>
             </button>
-            <button id="view-list-btn" class="p-2 rounded-lg bg-white dark:bg-[#2c2420] border border-[#f4f2f0] dark:border-[#332b26] hover:bg-gray-50 dark:hover:bg-[#3a302a] transition-colors text-[#896f61]" onclick="setViewMode('list')">
+            <button id="view-list-btn" class="p-2 rounded-lg bg-white dark:bg-[#2c2420] border border-[#f4f2f0] dark:border-[#332b26] hover:bg-gray-50 dark:hover:bg-[#3a302a] transition-colors text-primary" onclick="setViewMode('list')">
                 <span class="material-symbols-outlined">view_list</span>
             </button>
         </div>
     </div>
     
-    <div id="experiences-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px]">
+    <div id="experiences-grid" class="grid grid-cols-1 gap-6 auto-rows-[300px]">
         <?php
             $visible_cards = 0;
             $img_raw  = get_field('card1_image');
@@ -355,16 +355,26 @@ get_header();
 
         if (mode === 'list') {
             grid.classList.remove('md:grid-cols-2', 'lg:grid-cols-4');
-            listBtn.classList.add('text-primary');
-            listBtn.classList.remove('text-[#896f61]');
-            gridBtn.classList.remove('text-primary');
-            gridBtn.classList.add('text-[#896f61]');
+            grid.classList.add('grid-cols-1');
+            
+            // List button active
+            listBtn.classList.add('text-primary', 'bg-white', 'dark:bg-[#2c2420]');
+            listBtn.classList.remove('text-[#896f61]', 'bg-gray-50', 'dark:bg-white/5');
+            
+            // Grid button inactive
+            gridBtn.classList.remove('text-primary', 'bg-white', 'dark:bg-[#2c2420]');
+            gridBtn.classList.add('text-[#896f61]', 'bg-gray-50', 'dark:bg-white/5');
         } else {
             grid.classList.add('md:grid-cols-2', 'lg:grid-cols-4');
-            gridBtn.classList.add('text-primary');
-            gridBtn.classList.remove('text-[#896f61]');
-            listBtn.classList.remove('text-primary');
-            listBtn.classList.add('text-[#896f61]');
+            grid.classList.remove('grid-cols-1');
+            
+            // Grid button active
+            gridBtn.classList.add('text-primary', 'bg-white', 'dark:bg-[#2c2420]');
+            gridBtn.classList.remove('text-[#896f61]', 'bg-gray-50', 'dark:bg-white/5');
+            
+            // List button inactive
+            listBtn.classList.remove('text-primary', 'bg-white', 'dark:bg-[#2c2420]');
+            listBtn.classList.add('text-[#896f61]', 'bg-gray-50', 'dark:bg-white/5');
         }
     }
 
