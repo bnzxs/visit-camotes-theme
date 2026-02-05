@@ -204,7 +204,7 @@
     $bg_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
     if (!$bg_image) {
         // Fallback image if no featured image is set
-        $bg_image = "https://lh3.googleusercontent.com/aida-public/AB6AXuCHw78Js846AGFTj5LtaT12ZEPOWEVYsVlLXY8ywX2X7_90O_L9164WM7wF5ogXwNAyHy_xRc9YCQAM5jZNySIuhq9obp1UL7RxgEfw8ogLyFQOUlHTINVndcW5A-jbxdyMwxH7f7r3_BOQTaPRNuPfKd-anX8vh7cMBu7rO_aTEtdbX9miA3h52Je4CSfcU78y6ok6oi6aHODJL4Nkuig6uY7sBSRUd4yV2hz9MRo02rUbNZwH0wqXY500UZSVYlLKAR3NcXSpisXF";
+        $bg_image = "/wp-content/uploads/2026/01/nature-white-beauty-tree-tropical-scaled.webp";
     }
     ?>
     <!-- Hero Section (Subpages) -->

@@ -408,14 +408,14 @@ get_header();
 <?php
     $post_id = get_the_ID();
     $s_label = get_post_meta($post_id, '_spotlight_label', true) ?: "This Month's Spotlight";
-    $s_title = get_post_meta($post_id, '_spotlight_title', true) ?: "The Festival of Lights";
-    $s_desc = get_post_meta($post_id, '_spotlight_description', true) ?: "Join us for a magical evening as thousands of lanterns float into the night sky, symbolizing the release of worries and welcoming a new year of good fortune. A truly mesmerizing spectacle you cannot miss.";
-    $s_date = get_post_meta($post_id, '_spotlight_date', true) ?: "Oct 15-18";
-    $s_location = get_post_meta($post_id, '_spotlight_location', true) ?: "Central Square";
+    $s_title = get_post_meta($post_id, '_spotlight_title', true) ?: "No Incoming Events";
+    $s_desc = get_post_meta($post_id, '_spotlight_description', true) ?: "Stay informed about upcoming festivals, activities, and events at this destination. ";
+    $s_date = get_post_meta($post_id, '_spotlight_date', true) ?: date('M d, Y');
+    $s_location = get_post_meta($post_id, '_spotlight_location', true) ?: "" . get_the_title() . "";
     $s_btn_text = get_post_meta($post_id, '_spotlight_button_text', true) ?: "Reserve Your Spot";
-    $s_btn_url = get_post_meta($post_id, '_spotlight_button_url', true) ?: "#";
-    $s_img1 = get_post_meta($post_id, '_spotlight_image_1', true) ?: "https://lh3.googleusercontent.com/aida-public/AB6AXuDZM3wWz3dkKSbFh-Oz2kKEvqKVDZhfH4gR9KuJdZqU8VZZaxgDZJg_aqEQQHBS9CnR4A8uF_ff5FZG7_s1aYFIQtaTJFTrO1VpuwisBiKlbHzXF-kI1wF1djR07XVoEnjgRTNKROIuKZ-p4kXiGBCfam4cxd2F6b6uoPnHedfDO_J53Meo3jEt9d56IHBFNCbb4_Vr8kq-3cq50NHaeHFaHKRxtSJAN7_P0eyIbOjAjfRasgJEWecQQM27i2H8-nZ4VxR2g2V4yRsh";
-    $s_img2 = get_post_meta($post_id, '_spotlight_image_2', true) ?: "https://lh3.googleusercontent.com/aida-public/AB6AXuDVC81v8PVqGwXjYHSTGQ9gWk4Gakbq9SvCXw0pcBUr54TNFfkT8v6ghNbuv4HVP_liN_S-iBfXWwJQ1lA6J43on050qHk-RSA6Nr6AsHWpZ6rz2cvMptNDxikUoRdgQBhfbYZeqHStOK2mmg0Ef0oA94l8yuOEs6L8GyTx_f377SQcQ4HHaGUmP3U3F2i0VBMagP94gmxBwiKr4ZHOHZZGesze5ulKpxOKKd-ZaAOnQ3sczvhfxeAhUYVVxoZU2toSQNJOjbzPfkSF";
+    $s_btn_url = get_post_meta($post_id, '_spotlight_button_url', true) ?: "#properties-section";
+    $s_img1 = get_post_meta($post_id, '_spotlight_image_1', true) ?: "/wp-content/uploads/2026/02/default-image-2.webp";
+    $s_img2 = get_post_meta($post_id, '_spotlight_image_2', true) ?: "/wp-content/uploads/2026/02/default-image-1.webp";
     $s_icon = get_post_meta($post_id, '_spotlight_icon', true) ?: "light_mode";
 ?>
 
@@ -443,7 +443,7 @@ get_header();
                         <span class="text-sm text-white/60">Location</span>
                     </div>
                 </div>
-                <a href="#booking-section" class="inline-block mt-4 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all text-center">
+                <a href="<?php echo esc_html($s_btn_url); ?>" class="inline-block mt-4 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all text-center">
                     <?php echo esc_html($s_btn_text); ?>
                 </a>
             </div>
@@ -548,7 +548,7 @@ get_header();
                 <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest mb-4">
                     Accommodation
                 </span>
-                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white">
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">
                     Where to <span class="text-primary">Stay</span>
                 </h2>
             </div>

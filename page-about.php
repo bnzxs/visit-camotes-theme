@@ -17,9 +17,9 @@ get_header();
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-8">
-                    <span class="text-xs font-black uppercase tracking-[0.3em] text-primary">Our Purpose</span>
-                    <h2 class="text-4xl md:text-5xl font-black leading-tight text-[#121617] dark:text-white tracking-tight">
-                        Bridging the gap between travelers and local traditions.
+                    <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest">Our Purpose</span>
+                    <h2 class="text-4xl md:text-5xl font-black leading-tight text-[#181311] dark:text-white tracking-tight">
+                        Bridging the gap between travelers and local <span class="text-primary">traditions.</span>
                     </h2>
                     <div class="space-y-6 text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
                         <p>
@@ -84,8 +84,8 @@ get_header();
     <section class="py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20 space-y-4">
-                <span class="text-xs font-black uppercase tracking-[0.3em] text-primary">The Visionaries</span>
-                <h2 class="text-4xl md:text-6xl font-black text-[#121617] dark:text-white">Meet the Dreamers.</h2>
+                <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest">The Visionaries</span>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Meet the <span class="text-primary">Dreamers.</span></h2>
                 <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
                     Behind every story on this site is a team of passionate locals, photographers, and writers who call these islands home.
                 </p>
@@ -172,7 +172,7 @@ get_header();
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
                 <div class="lg:col-span-1 space-y-6">
-                    <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white uppercase">The values that define us.</h2>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white uppercase mb-4">The values that <span class="text-primary">define us.</span></h2>
                     <p class="text-gray-200 text-lg leading-relaxed">
                         We operate on a simple set of principles that ensure our growth contributes back to the islands we love.
                     </p>
@@ -209,7 +209,7 @@ get_header();
         <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
 
         <div class="max-w-5xl mx-auto px-4 text-center space-y-12 relative z-10">
-            <h2 class="text-5xl md:text-7xl font-black leading-tight tracking-tighter text-[#121617] dark:text-white">
+            <h2 class="text-4xl md:text-5xl font-black leading-tight tracking-tighter text-[#181311] dark:text-white mb-4">
                 Let your <span class="text-primary underline decoration-4 underline">#CamotesStory</span> begin!
             </h2>
             

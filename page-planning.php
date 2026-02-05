@@ -81,7 +81,7 @@ get_header();
     <main class="flex-1 flex flex-col gap-12 min-w-0">
         <section class="flex flex-col gap-6 scroll-mt-28" id="essentials">
             <div class="flex flex-col gap-2">
-                <h2 class="text-2xl font-bold text-[#181311] dark:text-white">Quick Essentials</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Quick <span class="text-primary">Essentials</span></h2>
                 <p class="text-[#666] dark:text-gray-400">Key information to know before you land.</p>
             </div>
             <div class="flex flex-wrap gap-4">
@@ -206,7 +206,7 @@ get_header();
         </section> -->
         <section class="flex flex-col gap-6 scroll-mt-28" id="best-time">
             <div class="flex flex-col gap-2">
-                <h2 class="text-2xl font-bold text-[#181311] dark:text-white">Best Time to Visit</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Best Time to <span class="text-primary">Visit</span></h2>
                 <p class="text-[#666] dark:text-gray-400">Weather patterns and seasonal highlights.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -260,7 +260,7 @@ get_header();
                 <!-- Autumn 
                 <div class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-white dark:bg-[#1e1e1e] border border-gray-100 dark:border-[#333] shadow-sm hover:shadow-md transition-shadow">
                     <div class="h-32 bg-gray-200 w-full overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Forest path covered in orange autumn leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-IxvSgn4uUG-DYQFWRaSM3lvzF96tEOn34y9mtYROZCgNUOuCB6n1WjYTTHJqIGBsgvfBgOObt-uaJg6el68Prmvu9DTHH-pVeXFJRKOr6qrUWBmDjvxXYIV_j-JySmKOEmCB7RkXmdZqQw6VXbmbDVvva3PEEoeSmPNGHkjHAbVhciyRg6DBM-eHoB-GsUSHY2DdNvghugpGIIuv7OqOmNifPNOLPRqcdXCYxSeqc-QuEPzZ_UgVYc_l7nLP9qtZlGALmTO8FY35"/>
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Forest path covered in orange autumn leaves" src="/wp-content/uploads/2026/02/no-image.webp"/>
                     </div>
                     <div class="px-4 pb-4 flex flex-col gap-1">
                         <div class="flex justify-between items-center">
@@ -277,7 +277,7 @@ get_header();
                 Winter 
                 <div class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-white dark:bg-[#1e1e1e] border border-gray-100 dark:border-[#333] shadow-sm hover:shadow-md transition-shadow">
                     <div class="h-32 bg-gray-200 w-full overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Snowy mountain landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAAFvVP_3u4_8nhEeisCcSChOchWvbBaZfAicEGEm7KXNXakHurzyL3YQF2yvA6m-cxMhrPbmpLfy1wlDGDk0EBCvaouquMdWkIxllp6QmaQkT6SN5lDlGlbY_CxMqyh47O7CV7aGztb0kte5YXinyCEHb7TRnlQ53m9KoDRCl8aW4NRmCn2281xRtzALIe3YR79fl8JmuonPmluIQTnT9ArglBSjfYrHD7OHejxYwQuPcaXa5l34N_JKWwjVxyo6uoUGqjq0R8hoZ"/>
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Snowy mountain landscape" src="/wp-content/uploads/2026/02/no-image.webp"/>
                     </div>
                     <div class="px-4 pb-4 flex flex-col gap-1">
                         <div class="flex justify-between items-center">
@@ -296,7 +296,7 @@ get_header();
         </section>
         <section class="flex flex-col gap-6 scroll-mt-28" id="transport">
             <div class="flex flex-col gap-2">
-                <h2 class="text-2xl font-bold text-[#181311] dark:text-white">Local Transportation</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Local <span class="text-primary">Transportation</span></h2>
                 <p class="text-[#666] dark:text-gray-400">Once you're on the island, these are the best ways to get around.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -359,7 +359,7 @@ get_header();
         </section>
         <section class="flex flex-col gap-6 scroll-mt-28" id="ferry-schedules">
             <div class="flex flex-col gap-2">
-                <h2 class="text-2xl font-bold text-[#181311] dark:text-white">Ferry Schedules</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Ferry <span class="text-primary">Schedules</span></h2>
                 <p class="text-[#666] dark:text-gray-400">Regular boat services to and from Camotes Island.</p>
             </div>
             <div class="grid grid-cols-1 gap-6">
@@ -458,7 +458,7 @@ get_header();
         </section>
         <section class="flex flex-col gap-6 scroll-mt-28" id="safety">
             <div class="flex flex-col gap-2">
-                <h2 class="text-2xl font-bold text-[#181311] dark:text-white">Safety &amp; Health</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Safety & <span class="text-primary">Health</span></h2>
                 <p class="text-[#666] dark:text-gray-400">Stay safe and healthy during your visit.</p>
             </div>
             <div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-6 border border-primary/10 flex flex-col gap-4">
@@ -495,7 +495,7 @@ get_header();
         </section>
         <section class="flex flex-col gap-6 mb-20 scroll-mt-28" id="faq">
             <div class="flex flex-col gap-2">
-                <h2 class="text-2xl font-bold text-[#181311] dark:text-white">Frequently Asked Questions</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Frequently Asked <span class="text-primary">Questions</span></h2>
                 <p class="text-[#666] dark:text-gray-400">Common questions from travelers.</p>
             </div>
             <div class="flex flex-col gap-3">

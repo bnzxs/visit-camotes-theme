@@ -16,7 +16,7 @@ get_header(); ?>
                 <h1 class="text-7xl md:text-9xl font-black text-primary relative">404</h1>
             </div>
             
-            <h2 class="text-3xl md:text-5xl font-black text-text-main dark:text-white mb-6">Oops! Lost in Paradise?</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-text-main dark:text-white mb-6">Oops! Lost in <span class="text-primary">Paradise?</span></h2>
             <p class="text-lg md:text-xl text-text-sub dark:text-gray-400 max-w-2xl mx-auto mb-10">
                 Looks like the page you're looking for has drifted off like a message in a bottle. Let's get you back on track to explore more of Camotes Island.
             </p>
@@ -40,7 +40,7 @@ get_header(); ?>
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                 <div>
                     <span class="text-xs font-black uppercase tracking-[0.2em] text-primary mb-2 block">Don't Miss Out</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-[#121617] dark:text-white">Latest Stories & Tips</h2>
+                    <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Latest Stories & <span class="text-primary">Tips</span></h2>
                 </div>
                 <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
                     View All Posts

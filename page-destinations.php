@@ -104,8 +104,7 @@ $current_category = isset($_GET['category']) ? sanitize_text_field($_GET['catego
             $destinations_query = new WP_Query($final_query_args);
             ?>
             <div class="flex items-center justify-between pb-3 pt-5">
-                <h2 class="text-[#181311] dark:text-white tracking-tight text-[28px] font-bold leading-tight">Trending
-                    Destinations</h2>
+                <h2 class="text-[#181311] dark:text-white tracking-tight text-4xl md:text-5xl font-black leading-tight mb-4">Trending <span class="text-primary">Destinations</span></h2>
                 <div class="flex items-center gap-4">
                     <!-- View Toggle Buttons -->
                     <div class="flex items-center gap-1 bg-gray-100 dark:bg-[#2f2521] rounded-lg p-1">
@@ -325,8 +324,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full">
             <div class="flex items-end justify-between pb-6">
                 <div>
-                    <h2 class="text-[#181311] dark:text-white tracking-tight text-[28px] font-bold leading-tight">
-                        Unforgettable Experiences</h2>
+                        <h2 class="text-[#181311] dark:text-white tracking-tight text-4xl md:text-5xl font-black leading-tight mb-4">
+                            Unforgettable <span class="text-primary">Experiences</span></h2>
                     <p class="text-[#896f61] dark:text-gray-400 mt-2">Curated activities to make your trip memorable.
                     </p>
                 </div>
@@ -346,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="h-64 overflow-hidden rounded-xl relative">
                         <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
                             data-alt="Hiker standing on a mountain peak looking at the view"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsEtMeAGCQfFVaiiQfbMsIZYU1kDpqvrQLioL2zGUgVZiCVNGAAKXiLdUNNGaPnCkn05P1FehcXDswT6jtD0E0NJEMD0expyFMPp30dYvvQnFOD2FVkWZpXW26nXmHTYsxbIuaHQy4ta-m9Z1hc8c6aZxpqrnyQjp9mJkZrx2gaDqkCn_5hXEISKYwMP3amWko6q6FhGPS7qZojXsSJ8cTB3L3qCBj3gBCKgAVGKmFUGEojGg7QnBqU0MixYWzLnFJs4kWM98GyQsv");'>
+                            style='background-image: url("/wp-content/uploads/2026/02/tourist-taking-photos-nature-landscape-using-his-smartphone-scaled.webp");'>
                         </div>
                         <div
                             class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
@@ -369,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="h-64 overflow-hidden rounded-xl relative">
                         <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
                             data-alt="Colorful street food dishes on a table"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHw78Js846AGFTj5LtaT12ZEPOWEVYsVlLXY8ywX2X7_90O_L9164WM7wF5ogXwNAyHy_xRc9YCQAM5jZNySIuhq9obp1UL7RxgEfw8ogLyFQOUlHTINVndcW5A-jbxdyMwxH7f7r3_BOQTaPRNuPfKd-anX8vh7cMBu7rO_aTEtdbX9miA3h52Je4CSfcU78y6ok6oi6aHODJL4Nkuig6uY7sBSRUd4yV2hz9MRo02rUbNZwH0wqXY500UZSVYlLKAR3NcXSpisXF");'>
+                            style='background-image: url("/wp-content/uploads/2026/01/sweet-pork-wooden-bowl-with-cucumber-long-beans-tomatoes-side-dishes-scaled.webp");'>
                         </div>
                         <div
                             class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
@@ -391,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="h-64 overflow-hidden rounded-xl relative">
                         <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
                             data-alt="Person doing pottery in a workshop"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAd4JSBVrWF5MHuRx5qSlw0U3cTV24eLfBSSrvJGdtddxmEV5DdWituynNXZcTkUQOomU74qHqij-r_-CR-RnXmqyyFQAVL4LbrSsAggzedayk1BsiZBqrKZjwSyZUHPNeLBAWKJ6R5y8N_zJd-eqUt5uXTKA_uykak2mINJuFVO4GtKzY_a_Rkvr8JpYXu35ACTp-Y56ev656EzPuJwPVtZwAK-kBYq8BzH1XGSDSvoJGJedzpdmrhm8BGslcJ5jFVEAIXWxbwAEEu");'>
+                            style='background-image: url("/wp-content/uploads/2026/01/man-swimming-water-sunny-day-scaled.webp");'>
                         </div>
                         <div
                             class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
@@ -402,9 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="px-4 pt-4 flex flex-col gap-2">
                         <h3
                             class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Traditional Artisan Workshop</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Learn local crafts from master
-                            artisans in the historic quarter.</p>
+                            Free Diving</h3>
+                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Experience the thrill of free
+                            diving in the crystal-clear waters of Camotes.</p>
                         <div class="flex items-center gap-2 mt-1">
                             <span class="text-xs font-bold text-primary">From $80</span>
                         </div>
