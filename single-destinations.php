@@ -112,9 +112,9 @@ get_header();
                 <p class="text-primary font-bold text-sm mb-1"><?php echo esc_html($cat_display); ?></p>
                 <h3 class="text-3xl font-bold text-white mb-2 leading-tight"><?php echo esc_html($title); ?></h3>
                 <p class="text-white/80 text-sm line-clamp-2 mb-4 max-w-md duration-500 delay-100"><?php echo esc_html($desc); ?></p>
-                <a href="<?php echo esc_url($link_url); ?>" class="flex items-center gap-2 text-white font-bold text-sm group/btn">
+                <!-- <a href="<?php echo esc_url($link_url); ?>" class="flex items-center gap-2 text-white font-bold text-sm group/btn">
                     Discover More <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
+                </a> -->
             </div>
         </div>
         <?php } ?>
@@ -473,73 +473,11 @@ get_header();
     </div>
 </section>
 
-<!-- Ad Placeholder: Single Destination Middle -->
-<div class="w-full max-w-7xl mx-auto px-6 lg:px-8 mt-12 mb-0">
-    <div class="flex flex-col items-center justify-center py-8 bg-gray-50 dark:bg-white/5 border border-dashed border-gray-200 dark:border-white/10 rounded-xl relative overflow-hidden group">
-        <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
-        <div class="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
-            <span class="material-symbols-outlined text-4xl">ads_click</span>
-            <span class="text-sm font-medium">Relevance Ad Content</span>
-            <span class="text-xs opacity-75">(In-Content Banner)</span>
-        </div>
-    </div>
-</div>
 <!-- 360 Degree Virtual Tour Section -->
-<section class="w-full max-w-[1200px] mx-auto px-6 lg:px-20 py-20">
-    <div class="text-center mb-10">
-        <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full tracking-widest mb-4">
-            Virtual Tour
-        </span>
-        <h2 class="text-4xl md:text-5xl font-black text-[#181311] dark:text-white mb-4">Explore <span class="text-primary"><?php the_title(); ?></span></h2>
-        <p class="text-[#896f61] dark:text-gray-400">Discover experiences waiting for you in <?php the_title(); ?>.</p>
-    </div>
-    
-    <!-- 360° Viewer Container -->
-    <div class="bg-[#f4f2f0] dark:bg-[#2c2420] rounded-2xl overflow-hidden relative">
-        <div id="viewer-360" class="w-full h-[500px]"></div>
-        
-        <!-- 360° Indicator -->
-        <div class="absolute top-4 left-4 bg-white/90 dark:bg-[#181311]/90 backdrop-blur-md px-3 py-2 rounded-lg shadow-lg flex items-center gap-2 pointer-events-none z-10">
-            <span class="material-symbols-outlined text-primary text-[20px] animate-pulse">360</span>
-            <span class="text-xs font-bold text-[#181311] dark:text-white">Drag to explore • Scroll to zoom</span>
-        </div>
-        
-        <!-- Area Buttons -->
-        <div class="w-full absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-wrap gap-3 justify-center pointer-events-none px-6 z-10">
-            <button 
-                data-panorama="/wp-content/uploads/2026/02/tomas-cocacola-4AxeQEi0gQc-unsplash-scaled.webp"
-                onclick="changePanorama(this)"
-                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
-                <span class="material-symbols-outlined text-[18px]">beach_access</span>
-                Beach Area
-            </button>
-            <button 
-                data-panorama="/wp-content/uploads/2026/02/hugo-rouquette-8RrDGp_4S9E-unsplash-scaled.webp"
-                onclick="changePanorama(this)"
-                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
-                <span class="material-symbols-outlined text-[18px]">cottage</span>
-                Cottage
-            </button>
-            <button 
-                data-panorama="https://placeholder.pics/svg/300/entrance"
-                onclick="changePanorama(this)"
-                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
-                <span class="material-symbols-outlined text-[18px]">door_front</span>
-                Entrance
-            </button>
-            <button 
-                data-panorama="https://placeholder.pics/svg/300/lobby"
-                onclick="changePanorama(this)"
-                class="area-btn bg-white/95 dark:bg-[#181311]/95 backdrop-blur-md text-[#181311] dark:text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg pointer-events-auto hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 flex items-center gap-2 text-sm">
-                <span class="material-symbols-outlined text-[18px]">meeting_room</span>
-                Lobby
-            </button>
-        </div>
-    </div>
-</section>
+<?php echo do_shortcode('[vc_360_viewer]'); ?>
 
 <!-- Ad Placeholder: Single Destination Middle -->
-<div class="w-full max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+<div class="w-full max-w-7xl mx-auto px-6 lg:px-8 mb-12 mb-0">
     <div class="flex flex-col items-center justify-center py-8 bg-gray-50 dark:bg-white/5 border border-dashed border-gray-200 dark:border-white/10 rounded-xl relative overflow-hidden group">
         <span class="absolute top-2 right-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advertisement</span>
         <div class="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
@@ -549,7 +487,6 @@ get_header();
         </div>
     </div>
 </div>
-
 
 <!-- Where to Stay Section -->
 <section id="properties-section" class="w-full py-20 bg-[#fbfaf8] dark:bg-[#120e0c]">
@@ -572,76 +509,4 @@ get_header();
     </div>
 </section>
 
-<!-- Photo Sphere Viewer CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css"/>
-
-
-<!-- Photo Sphere Viewer JS -->
-<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
-
-<script>
-// Initialize 360° Photo Sphere Viewer
-const viewer = new PhotoSphereViewer.Viewer({
-    container: document.getElementById('viewer-360'),
-    panorama: '/wp-content/uploads/2026/02/timothy-oldfield-luufnHoChRU-unsplash-scaled.webp',
-    
-    // Navigation settings
-    defaultZoomLvl: 50,
-    minFov: 30,
-    maxFov: 90,
-    
-    // Mouse/touch controls
-    mousewheel: true,
-    mousemove: true,
-    touchmoveTwoFingers: false,
-    
-    // UI settings
-    navbar: [
-        'zoom',
-        'fullscreen',
-    ],
-    
-    // Performance
-    fisheye: false,
-    moveSpeed: 1.5,
-    zoomSpeed: 2,
-    
-    // Loading
-    loadingImg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="40" stroke="%23ee6c2b" stroke-width="4" fill="none"/></svg>',
-    loadingTxt: 'Loading...',
-});
-
-// Handle errors more gracefully
-viewer.addEventListener('error', (e) => {
-    console.warn('360° Viewer:', e.detail.message);
-    // Show a subtle notification instead of the default error
-    viewer.notification.show({
-        content: 'Unable to load panorama',
-        timeout: 3000,
-    });
-});
-
-// Change panorama function
-function changePanorama(button) {
-    const panoramaUrl = button.getAttribute('data-panorama');
-    
-    // Remove active state from all buttons
-    const allButtons = document.querySelectorAll('.area-btn');
-    allButtons.forEach(btn => {
-        btn.classList.remove('bg-primary', 'text-white');
-        btn.classList.add('bg-white/95', 'dark:bg-[#181311]/95', 'text-[#181311]', 'dark:text-white');
-    });
-    
-    // Add active state to clicked button
-    button.classList.remove('bg-white/95', 'dark:bg-[#181311]/95', 'text-[#181311]', 'dark:text-white');
-    button.classList.add('bg-primary', 'text-white');
-    
-    // Change the panorama with smooth transition
-    viewer.setPanorama(panoramaUrl, {
-        transition: 1500,
-        showLoader: true,
-    });
-}
-</script>
 <?php get_footer(); ?>
