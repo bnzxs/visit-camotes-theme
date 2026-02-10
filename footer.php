@@ -452,5 +452,46 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- Sticky Scroll to Top Button -->
+<button id="scroll-top-btn" 
+    style="position: fixed; bottom: 50px; right: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #ee6c2b; color: white; border: none; border-radius: 8px 0 0 8px; cursor: pointer; transition: all 0.3s ease; opacity: 0; transform: translateX(100%); pointer-events: none; box-shadow: -2px 2px 10px rgba(0,0,0,0.2);"
+    aria-label="Scroll to Top">
+    <span class="material-symbols-outlined" style="font-size: 24px;">arrow_upward</span>
+</button>
+
+<script>
+(function() {
+    window.addEventListener('load', function() {
+        const scrollBtn = document.getElementById('scroll-top-btn');
+        if (!scrollBtn) return;
+
+        function refreshScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 300) {
+                scrollBtn.style.opacity = "1";
+                scrollBtn.style.transform = "translateX(0)";
+                scrollBtn.style.pointerEvents = "auto";
+            } else {
+                scrollBtn.style.opacity = "0";
+                scrollBtn.style.transform = "translateX(100%)";
+                scrollBtn.style.pointerEvents = "none";
+            }
+        }
+
+        window.addEventListener('scroll', refreshScroll, { passive: true });
+        
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Initial check
+        refreshScroll();
+    });
+})();
+</script>
+
 </body>
 </html>

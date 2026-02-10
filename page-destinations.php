@@ -328,111 +328,176 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </div>
 
-<!-- Experiences Recommendation Section -->
+<!-- Premier Accommodations Section -->
 <div class="w-full mt-0 bg-white dark:bg-[#181311] py-16">
-    <div class=" flex justify-center">
+    <div class="flex justify-center">
         <div class="flex flex-col max-w-[1280px] md:px-8 flex-1 w-full">
-            <div class="flex items-end justify-between pb-6">
+            <div class="flex items-end justify-between pb-8 px-4 md:px-0">
                 <div>
-                        <h2 class="text-[#181311] dark:text-white tracking-tight text-4xl md:text-5xl font-black leading-tight mb-4">
-                            Unforgettable <span class="text-primary">Experiences</span></h2>
-                    <p class="text-[#896f61] dark:text-gray-400 mt-2">Curated activities to make your trip memorable.
-                    </p>
+                    <h2 class="text-[#181311] dark:text-white tracking-tight text-4xl md:text-5xl font-black leading-tight mb-4">
+                        Premier <span class="text-primary">Accommodations</span></h2>
+                    <p class="text-[#896f61] dark:text-gray-400 mt-2">Discover the best places to stay and relax in Camotes.</p>
+                </div>
+                <div class="flex gap-2 mb-2">
+                    <button id="prop-prev" class="p-2 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button id="prop-next" class="p-2 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
                 </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">
-                    <div class="h-64 overflow-hidden rounded-xl relative">
-                        <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Hiker standing on a mountain peak looking at the view"
-                            style='background-image: url("/wp-content/uploads/2026/02/tourist-taking-photos-nature-landscape-using-his-smartphone-scaled.webp");'>
+
+            <?php
+            // Ensure the DB class exists or include it
+            if (class_exists('VC_Booking_DB')) {
+                $all_properties = VC_Booking_DB::get_properties(-1, true);
+                
+                // Filter properties: exclude those that are ONLY in "General"
+                $properties = array_filter($all_properties, function($p) {
+                    global $wpdb;
+                    $dest_ids = $wpdb->get_col($wpdb->prepare(
+                        "SELECT destination_id FROM {$wpdb->prefix}vc_property_destinations WHERE property_id = %d", 
+                        $p->id
+                    ));
+                    if ($p->destination_id > 0 && !in_array($p->destination_id, $dest_ids)) {
+                        $dest_ids[] = $p->destination_id;
+                    }
+                    
+                    if (empty($dest_ids)) return false; // purely General (unassigned)
+
+                    foreach ($dest_ids as $id) {
+                        if ($id > 0) {
+                            $title = get_the_title($id);
+                            if ($title && strtolower(trim($title)) !== 'general') {
+                                return true; // Has at least one specific destination
+                            }
+                        }
+                    }
+                    return false; // Only has "General" or invalid destinations
+                });
+            } else {
+                $properties = [];
+            }
+
+            if (!empty($properties)) :
+            ?>
+            <style>
+                @media (min-width: 768px) {
+                    .prop-card-item {
+                        width: calc((100% - 48px) / 3) !important;
+                        flex-shrink: 0;
+                    }
+                }
+                @media (max-width: 767px) {
+                    .prop-card-item {
+                        width: 85% !important;
+                        flex-shrink: 0;
+                    }
+                }
+            </style>
+            <div id="prop-slider" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                <?php foreach ($properties as $prop) : 
+                    $img_url = $prop->image_id ? wp_get_attachment_image_url($prop->image_id, 'large') : '/wp-content/uploads/2026/02/no-image.webp';
+                    
+                    // Fetch all non-General destinations for display
+                    global $wpdb;
+                    $dest_ids = $wpdb->get_col($wpdb->prepare(
+                        "SELECT destination_id FROM {$wpdb->prefix}vc_property_destinations WHERE property_id = %d", 
+                        $prop->id
+                    ));
+                    if ($prop->destination_id > 0 && !in_array($prop->destination_id, $dest_ids)) {
+                        $dest_ids[] = $prop->destination_id;
+                    }
+                    
+                    $dest_titles = [];
+                    foreach ($dest_ids as $id) {
+                        if ($id > 0) {
+                            $title = get_the_title($id);
+                            if ($title && strtolower(trim($title)) !== 'general') {
+                                $dest_titles[] = $title;
+                            }
+                        }
+                    }
+                    
+                    $display_dest = !empty($dest_titles) ? implode(', ', array_unique($dest_titles)) : '';
+                ?>
+                    <div class="prop-card-item snap-center group bg-white dark:bg-[#1f1a17] rounded-2xl overflow-hidden border border-[#f4f2f0] dark:border-[#2f2521] shadow-sm hover:shadow-md transition-all flex flex-col flex-shrink-0">
+                        <div class="aspect-[16/10] overflow-hidden relative flex-shrink-0">
+                            <img alt="<?php echo esc_attr($prop->name); ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="<?php echo esc_url($img_url); ?>"/>
+                            <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/60 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">hotel</span> 
+                                <?php echo esc_html($prop->property_type ?: 'Resort'); ?>
+                            </div>
                         </div>
-                        <div
-                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                            <span class="text-xs font-bold text-[#181311] dark:text-white">3 Days</span>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-xl font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors"><?php echo esc_html($prop->name); ?></h3>
+                            </div>
+                            <div class="flex flex-col gap-1.5 mb-6">
+                                <?php if ($prop->address) : ?>
+                                    <div class="flex items-center gap-1.5 text-[#896f61] dark:text-gray-400 text-sm">
+                                        <span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+                                        <span class="truncate"><?php echo esc_html($prop->address); ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($display_dest) : ?>
+                                    <div class="flex items-center gap-1.5 text-[#896f61] dark:text-gray-400 text-sm">
+                                        <span class="material-symbols-outlined text-[18px] text-primary">explore</span>
+                                        <span class="truncate"><?php echo esc_html($display_dest); ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <div class="flex items-center justify-between border-t border-[#f4f2f0] dark:border-[#2f2521] mt-auto">
+                                <button 
+                                    class="vc-book-now-trigger bg-primary hover:bg-orange-600 text-white text-sm font-bold h-10 mt-4 px-4 rounded-lg shadow-lg hover:shadow-primary/30 transition-all active:scale-95"
+                                    data-id="<?php echo $prop->id; ?>">
+                                    Check Availability
+                                </button>
+                                <!-- <span class="text-xs font-black text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">CAMOTES</span> -->
+                            </div>
                         </div>
                     </div>
-                    <div class="px-4 pt-4 flex flex-col gap-2">
-                        <h3
-                            class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Highland Trekking</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Navigate the rugged peaks of
-                            the Northern range with expert guides.</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-bold text-primary">From $250</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">
-                    <div class="h-64 overflow-hidden rounded-xl relative">
-                        <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Colorful street food dishes on a table"
-                            style='background-image: url("/wp-content/uploads/2026/01/sweet-pork-wooden-bowl-with-cucumber-long-beans-tomatoes-side-dishes-scaled.webp");'>
-                        </div>
-                        <div
-                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                            <span class="text-xs font-bold text-[#181311] dark:text-white">4 Hours</span>
-                        </div>
-                    </div>
-                    <div class="px-4 pt-4 flex flex-col gap-2">
-                        <h3 class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Street Food Safari</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Taste the authentic flavors of
-                            the city in this guided evening tour.</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-bold text-primary">From $45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">
-                    <div class="h-64 overflow-hidden rounded-xl relative">
-                        <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
-                            data-alt="Person doing pottery in a workshop"
-                            style='background-image: url("/wp-content/uploads/2026/01/man-swimming-water-sunny-day-scaled.webp");'>
-                        </div>
-                        <div
-                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                            <span class="text-xs font-bold text-[#181311] dark:text-white">1 Day</span>
-                        </div>
-                    </div>
-                    <div class="px-4 pt-4 flex flex-col gap-2">
-                        <h3
-                            class="text-lg font-bold text-[#181311] dark:text-white group-hover:text-primary transition-colors">
-                            Free Diving</h3>
-                        <p class="text-sm text-[#896f61] dark:text-gray-400 line-clamp-2">Experience the thrill of free
-                            diving in the crystal-clear waters of Camotes.</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-bold text-primary">From $80</span>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
+            
+            <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const slider = document.getElementById("prop-slider");
+                const prevBtn = document.getElementById("prop-prev");
+                const nextBtn = document.getElementById("prop-next");
+                if (!slider || !prevBtn || !nextBtn) return;
+
+                const getScrollAmount = () => {
+                    const firstCard = slider.querySelector('div[class*="snap-center"]');
+                    return firstCard ? firstCard.offsetWidth + 24 : 400;
+                };
+
+                nextBtn.addEventListener("click", () => {
+                    slider.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+                });
+
+                prevBtn.addEventListener("click", () => {
+                    slider.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+                });
+            });
+            </script>
+            <?php else : ?>
+                <div class="bg-gray-50/50 dark:bg-white/[0.02] border-2 border-dashed border-gray-100 dark:border-white/5 rounded-3xl p-12 text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">hotel</span>
+                    </div>
+                    <p class="text-[#181311] dark:text-white font-bold text-lg mb-2">No Accommodations Found</p>
+                    <p class="text-[#896f61] dark:text-gray-400 max-w-md mx-auto">We're currently listing the best resorts and hotels in Camotes. Please check back later!</p>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
-
-<script>
-    function setViewMode(mode) {
-        const grid = document.getElementById('experiences-grid');
-        const gridBtn = document.getElementById('view-grid-btn');
-        const listBtn = document.getElementById('view-list-btn');
-
-        if (mode === 'list') {
-            grid.classList.remove('md:grid-cols-2', 'lg:grid-cols-4');
-            listBtn.classList.add('text-primary');
-            listBtn.classList.remove('text-[#896f61]');
-            gridBtn.classList.remove('text-primary');
-            gridBtn.classList.add('text-[#896f61]');
-        } else {
-            grid.classList.add('md:grid-cols-2', 'lg:grid-cols-4');
-            gridBtn.classList.add('text-primary');
-            gridBtn.classList.remove('text-[#896f61]');
-            listBtn.classList.remove('text-primary');
-            listBtn.classList.add('text-[#896f61]');
-        }
-    }
-</script>
+<?php 
+// Render the booking form modal (hidden by default)
+// Passing destination_id="-1" to show all properties in the dropdown
+echo do_shortcode('[vc_booking_form destination_id="-1"]'); 
+?>
 <?php get_footer(); ?>
