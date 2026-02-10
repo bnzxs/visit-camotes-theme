@@ -339,16 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="text-[#896f61] dark:text-gray-400 mt-2">Curated activities to make your trip memorable.
                     </p>
                 </div>
-                <div class="hidden md:flex gap-2">
-                    <button
-                        class="size-10 rounded-full border border-[#e6dfdb] dark:border-[#2f2521] flex items-center justify-center text-[#181311] dark:text-white hover:bg-[#f4f2f0] dark:hover:bg-[#2f2521]">
-                        <span class="material-symbols-outlined">arrow_back</span>
-                    </button>
-                    <button
-                        class="size-10 rounded-full border border-[#e6dfdb] dark:border-[#2f2521] flex items-center justify-center text-[#181311] dark:text-white hover:bg-[#f4f2f0] dark:hover:bg-[#2f2521]">
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="flex flex-col rounded-xl overflow-hidden group cursor-pointer">

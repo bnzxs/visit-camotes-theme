@@ -67,16 +67,17 @@ get_header();
             <p class="text-[#896f61] dark:text-gray-400 max-w-xl">Handpicked activities that bring you closer to the heart of our country. From adrenaline-pumping adventures to soul-soothing retreats.</p>
         </div>
         <div class="flex gap-2">
-            <button id="view-grid-btn" class="p-2 rounded-lg bg-gray-50 border border-[#f4f2f0] dark:border-[#332b26] hover:bg-white dark:hover:bg-[#3a302a] transition-colors text-[#896f61]" onclick="setViewMode('grid')">
+            <button id="view-grid-btn" class="p-2 rounded-lg bg-white dark:bg-[#2c2420] border border-[#f4f2f0] dark:border-[#332b26] hover:bg-gray-50 dark:hover:bg-[#3a302a] transition-colors text-primary" onclick="setViewMode('grid')">
                 <span class="material-symbols-outlined">grid_view</span>
             </button>
-            <button id="view-list-btn" class="p-2 rounded-lg bg-white dark:bg-[#2c2420] border border-[#f4f2f0] dark:border-[#332b26] hover:bg-gray-50 dark:hover:bg-[#3a302a] transition-colors text-primary" onclick="setViewMode('list')">
+            <button id="view-list-btn" class="p-2 rounded-lg bg-gray-50 border border-[#f4f2f0] dark:border-[#332b26] hover:bg-white dark:hover:bg-[#3a302a] transition-colors text-[#896f61]" onclick="setViewMode('list')">
                 <span class="material-symbols-outlined">view_list</span>
             </button>
         </div>
     </div>
     
-    <div id="experiences-grid" class="grid grid-cols-1 gap-6 auto-rows-[300px]">
+    
+    <div id="experiences-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px]">
         <?php
             $visible_cards = 0;
             $img_raw  = get_field('card1_image');
